@@ -1,0 +1,33 @@
+{
+  "name": "next-db",
+  "version": "0.1.0",
+  "packageManager": "yarn@4.4.1",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "format": "prettier --write ./src/**/*"
+  },
+  "dependencies": {
+    "@vercel/postgres": "^0.9.0",
+    "next": "14.2.6",
+    "react": "^18",
+    "react-dom": "^18",
+    "redaxios": "^0.5.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.5.0",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.6",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-jsx-a11y": "^6.9.0",
+    "prettier": "^3.3.3",
+    "prisma": "^5.18.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
+  }
+}
