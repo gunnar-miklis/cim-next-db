@@ -4357,6 +4357,7 @@ __metadata:
     ts-node: "npm:^10.9.2"
     typescript: "npm:^5.5.4"
     vercel: "npm:^37.1.2"
+    zod: "npm:^3.23.8"
     zod-form-data: "npm:^2.0.2"
   languageName: unknown
   linkType: soft
@@ -6493,5 +6494,12 @@ __metadata:
   peerDependencies:
     zod: ">= 3.11.0"
   checksum: 10c0/962ad1d3f9ffead8c794b7adefdd3192ebb6483b3cd3b9f9295d5ffb517d15889b33994576ec2a4c56785e3bc0b4843aa007299d4a6c29bc750a367715174794
+  languageName: node
+  linkType: hard
+
+"zod@npm:^3.23.8":
+  version: 3.23.8
+  resolution: "zod@npm:3.23.8"
+  checksum: 10c0/8f14c87d6b1b53c944c25ce7a28616896319d95bc46a9660fe441adc0ed0a81253b02b5abdaeffedbeb23bdd25a0bf1c29d2c12dd919aef6447652dd295e3e69
   languageName: node
   linkType: hard
