@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import styles from '@/src/styles/app-page.module.css';
+import styles from '@/src/styles/app.module.css';
 
 export default function Home() {
   return (
@@ -26,12 +26,7 @@ export default function Home() {
       <div className={styles.center}></div>
 
       <div className={styles.grid}>
-        <a
-          href='/petition'
-          className={styles.card}
-          target='_blank'
-          rel='noopener noreferrer'
-        >
+        <a href='/petition' className={styles.card} target='_blank' rel='noopener noreferrer'>
           <h2>
             Petition <span>-&gt;</span>
           </h2>

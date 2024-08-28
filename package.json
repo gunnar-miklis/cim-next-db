@@ -1,8 +1,8 @@
 {
   "name": "next-db",
   "version": "0.1.0",
-  "packageManager": "yarn@4.4.1",
   "private": true,
+  "packageManager": "yarn@4.4.1",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -15,21 +15,23 @@
     "@prisma/client": "^5.19.0",
     "@vercel/postgres": "^0.9.0",
     "next": "14.2.6",
-    "prisma": "^5.19.0",
     "react": "^18",
     "react-dom": "^18",
     "redaxios": "^0.5.1",
-    "vercel": "^37.1.2"
+    "vercel": "^37.1.2",
+    "zod-form-data": "^2.0.2"
   },
   "devDependencies": {
     "@types/node": "^22.5.0",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@yarnpkg/pnpify": "^4.1.1",
     "eslint": "^8",
     "eslint-config-next": "14.2.6",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-jsx-a11y": "^6.9.0",
     "prettier": "^3.3.3",
+    "prisma": "^5.19.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.5.4"
   }
