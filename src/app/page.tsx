@@ -1,5 +1,11 @@
 import Image from 'next/image';
 import styles from '@/src/styles/app.module.css';
+import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Next DB',
+};
 
 export default function Home() {
   return (
@@ -16,14 +22,12 @@ export default function Home() {
 
       <br />
 
-      <div className={styles.grid}>
-        <a href='/petition' className={styles.card} target='_blank' rel='noopener noreferrer'>
-          <h2>
-            Petition <span>-&gt;</span>
-          </h2>
-          <p>Go to the petition page</p>
-        </a>
-      </div>
+      <Link href='/petition' className={styles.card}>
+        <h2>
+          Petition <span>-&gt;</span>
+        </h2>
+        <p>Go to the petition page</p>
+      </Link>
 
       <div className={styles.center}></div>
     </main>

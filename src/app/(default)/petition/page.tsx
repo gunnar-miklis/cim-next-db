@@ -1,54 +1,36 @@
 import type { Metadata } from 'next';
-import prisma from '@/prisma/db';
-import styles from '@/src/styles/app.module.css';
 import Link from 'next/link';
+import prisma from '@/prisma/db';
 import PendingSignatures from '@/src/components/PendingSignatures';
 import Form from '@/src/components/Form';
+import styles from '@/src/styles/app.module.css';
 
-/* Pages erhalten automatisch searchParams als Prop */
-type Props = {
-  searchParams: {
-    page?: string;
-    perPage?: string;
-  };
-};
+export const metadata: Metadata = { title: 'Petition' };
 
-const defaultPerPage = 1;
-
-export const metadata: Metadata = {
-  title: 'Petition',
-};
-
-export default async function PetitionPage({ searchParams: { page = '', perPage = '' } }: Props) {
-  const perPageNumber = Math.max(Math.min(parseInt(perPage) || defaultPerPage, 100), 1);
-
-  const totalSignatures = await prisma.signature.count({
-    where: { approved: true },
-  });
-  const totalPageCount = Math.ceil(totalSignatures / perPageNumber);
+type Props = { searchParams: { page?: string } };
+export default async function PetitionPage({ searchParams: { page = '' } }: Props) {
+  const signituresPerPage = 1;
+  const totalSignatures = await prisma.signature.count({ where: { approved: true } });
+  const totalPages = Math.ceil(totalSignatures / signituresPerPage);
 
   let pageNumber = Math.max(parseInt(page) || 1, 1);
-  if (pageNumber > totalPageCount) pageNumber = 1;
+  if (pageNumber > totalPages) pageNumber = 1;
 
   const signatures = await prisma.signature.findMany({
     where: { approved: true },
-    take: perPageNumber,
-    skip: (pageNumber - 1) * perPageNumber,
-    orderBy: { date: 'asc' },
+    take: signituresPerPage,
+    skip: (pageNumber - 1) * signituresPerPage,
+    orderBy: { date: 'desc' },
   });
-
-  console.log('signatures :>> ', signatures);
 
   return (
     <main className={styles.main}>
-      <div className={styles.grid}>
-        <a href='/' className={styles.card} target='_blank' rel='noopener noreferrer'>
-          <h2>
-            Home <span>-&gt;</span>
-          </h2>
-          <p>Go to the home page</p>
-        </a>
-      </div>
+      <Link href='/' className={styles.card}>
+        <h2>
+          Home <span>-&gt;</span>
+        </h2>
+        <p>Go to the home page</p>
+      </Link>
 
       <div className={styles.description}>
         <h1>Important Petition</h1>
@@ -62,7 +44,7 @@ export default async function PetitionPage({ searchParams: { page = '', perPage 
       <div className={styles.description}>
         <strong>{totalSignatures} people already signed!</strong>
 
-        <ol className={styles.list} start={(pageNumber - 1) * perPageNumber + 1}>
+        <ol className={styles.list} start={(pageNumber - 1) * signituresPerPage + 1}>
           {signatures.map(({ name, date, id }) => (
             <li key={id}>
               {name} (
@@ -74,16 +56,30 @@ export default async function PetitionPage({ searchParams: { page = '', perPage 
           ))}
         </ol>
 
-        {totalPageCount > 1 && (
-          <nav className={styles.pagination} aria-label='Pagination'>
+        {totalPages > 1 && (
+          <nav className={styles.flexRow} aria-label='Pagination'>
+            <select defaultValue={signituresPerPage}>
+              <option value='1' disabled>
+                1
+              </option>
+              <option value='2' disabled>
+                2
+              </option>
+              <option value='5' disabled>
+                5
+              </option>
+              <option value='10' disabled>
+                10
+              </option>
+            </select>
             {pageNumber > 1 && (
-              <Link href={`/petition?perPage=${pageNumber - 1}&page=${perPage}`}>
-                Next Signatures
+              <Link href={`/petition?page=${pageNumber - 1}`}>
+                <button>Previous Page</button>
               </Link>
             )}
-            {pageNumber < totalPageCount && (
-              <Link href={`/petition?perPage=${pageNumber + 1}&page=${perPage}`} scroll={false}>
-                Next Signatures
+            {pageNumber < totalPages && (
+              <Link href={`/petition?page=${pageNumber + 1}`} scroll={false}>
+                <button>Next Page</button>
               </Link>
             )}
           </nav>

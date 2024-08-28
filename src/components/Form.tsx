@@ -1,10 +1,11 @@
 'use client';
 
 import styles from '@/src/styles/app.module.css';
+import { addSignature } from './ServerActions';
 
 export default function Form() {
   return (
-    <form className={styles.form}>
+    <form className={styles.form} action={addSignature}>
       <div className={styles.inputWrapper}>
         <label htmlFor='name'>Name (optional)</label>
         <input id='name' name='name' maxLength={100} />
@@ -18,7 +19,7 @@ export default function Form() {
         <small>*Agree Privacy Terms.</small>
       </label>
       <button type='submit'>
-        <strong style={{textTransform: 'uppercase'}}>Sign now!</strong>
+        <strong style={{ textTransform: 'uppercase' }}>Sign now!</strong>
       </button>
     </form>
   );

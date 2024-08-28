@@ -98,6 +98,24 @@ a {
   text-decoration: none;
 }
 
+input,
+button {
+  padding: 0.3rem;
+  border: 1px solid rgba(var(--callout-border-rgb));
+}
+button:hover {
+  border-color: var(--tile-border);
+  cursor: pointer;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+li {
+  padding: 0.2rem;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
