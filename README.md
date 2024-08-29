@@ -49,7 +49,7 @@ model ... {
 ### migrate and generate
 
 ```bash
-yarn prisma migrate dev --name init
+yarn prisma migrate dev --name init --skip-generate
 yarn pnpify prisma generate
 ```
 

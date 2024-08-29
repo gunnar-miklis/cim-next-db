@@ -29,7 +29,12 @@ export default function Home() {
         <p>Go to the petition page</p>
       </Link>
 
-      <div className={styles.center}></div>
+      <Link href='/events' className={styles.card}>
+        <h2>
+          Events <span>-&gt;</span>
+        </h2>
+        <p>Go to the Events page</p>
+      </Link>
     </main>
   );
 }

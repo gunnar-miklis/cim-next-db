@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import prisma from '@/prisma/db';
-import PendingSignatures from '@/src/components/PendingSignatures';
-import Form from '@/src/components/Form';
+import PendingSignatures from '@/src/components/Petition/PendingSignatures';
+import Form from '@/src/components/Petition/Form';
 import styles from '@/src/styles/app.module.css';
 
 export const metadata: Metadata = { title: 'Petition' };
@@ -34,6 +34,7 @@ export default async function PetitionPage({ searchParams: { page = '' } }: Prop
 
       <div className={styles.description}>
         <h1>Important Petition</h1>
+        <strong>{totalSignatures} people already signed!</strong>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem, ut dolorum. Quae
           adipisci labore magnam nulla officia. Ratione ab magnam voluptatem veniam, numquam maxime
@@ -42,7 +43,7 @@ export default async function PetitionPage({ searchParams: { page = '' } }: Prop
       </div>
 
       <div className={styles.description}>
-        <strong>{totalSignatures} people already signed!</strong>
+        <h2>Latest Subscribers</h2>
 
         <ol className={styles.list} start={(pageNumber - 1) * signituresPerPage + 1}>
           {signatures.map(({ name, date, id }) => (
@@ -93,8 +94,6 @@ export default async function PetitionPage({ searchParams: { page = '' } }: Prop
       <div className={styles.description}>
         <PendingSignatures />
       </div>
-
-      <div className={styles.center}></div>
     </main>
   );
 }

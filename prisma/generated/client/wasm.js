@@ -127,6 +127,37 @@ exports.Prisma.SignatureScalarFieldEnum = {
   date: 'date'
 };
 
+exports.Prisma.EventScalarFieldEnum = {
+  createdAt: 'createdAt',
+  id: 'id',
+  name: 'name',
+  description: 'description',
+  dateStart: 'dateStart',
+  dateEnd: 'dateEnd',
+  venueId: 'venueId'
+};
+
+exports.Prisma.PosterScalarFieldEnum = {
+  createdAt: 'createdAt',
+  id: 'id',
+  title: 'title',
+  url: 'url',
+  eventId: 'eventId'
+};
+
+exports.Prisma.VenueScalarFieldEnum = {
+  createdAt: 'createdAt',
+  id: 'id',
+  name: 'name',
+  adress: 'adress'
+};
+
+exports.Prisma.CategoryScalarFieldEnum = {
+  createdAt: 'createdAt',
+  id: 'id',
+  title: 'title'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -144,7 +175,11 @@ exports.Prisma.NullsOrder = {
 
 
 exports.Prisma.ModelName = {
-  Signature: 'Signature'
+  Signature: 'Signature',
+  Event: 'Event',
+  Poster: 'Poster',
+  Venue: 'Venue',
+  Category: 'Category'
 };
 
 /**
