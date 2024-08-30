@@ -4,11 +4,12 @@ import prisma from '@/prisma/db';
 import PendingSignatures from '@/src/components/Petition/PendingSignatures';
 import Form from '@/src/components/Petition/Form';
 import styles from '@/src/styles/app.module.css';
-
-export const metadata: Metadata = { title: 'Petition' };
+import { auth } from '@/src/auth';
 
 type Props = { searchParams: { page?: string } };
 export default async function PetitionPage({ searchParams: { page = '' } }: Props) {
+  const session = await auth();
+
   const signituresPerPage = 1;
   const totalSignatures = await prisma.signature.count({ where: { approved: true } });
   const totalPages = Math.ceil(totalSignatures / signituresPerPage);
@@ -20,7 +21,7 @@ export default async function PetitionPage({ searchParams: { page = '' } }: Prop
     where: { approved: true },
     take: signituresPerPage,
     skip: (pageNumber - 1) * signituresPerPage,
-    orderBy: { date: 'desc' },
+    orderBy: { createdAt: 'desc' },
   });
 
   return (
@@ -46,11 +47,11 @@ export default async function PetitionPage({ searchParams: { page = '' } }: Prop
         <h2>Latest Subscribers</h2>
 
         <ol className={styles.list} start={(pageNumber - 1) * signituresPerPage + 1}>
-          {signatures.map(({ name, date, id }) => (
+          {signatures.map(({ name, updatedAt, id }) => (
             <li key={id}>
               {name} (
-              <time dateTime={date.toISOString().substring(0, 10)}>
-                {date.toLocaleDateString('de')}
+              <time dateTime={updatedAt.toISOString().substring(0, 10)}>
+                {updatedAt.toLocaleDateString('de')}
               </time>
               )
             </li>
@@ -59,19 +60,11 @@ export default async function PetitionPage({ searchParams: { page = '' } }: Prop
 
         {totalPages > 1 && (
           <nav className={styles.flexRow} aria-label='Pagination'>
-            <select defaultValue={signituresPerPage}>
-              <option value='1' disabled>
-                1
-              </option>
-              <option value='2' disabled>
-                2
-              </option>
-              <option value='5' disabled>
-                5
-              </option>
-              <option value='10' disabled>
-                10
-              </option>
+            <select defaultValue={signituresPerPage} disabled>
+              <option value='1'>1</option>
+              <option value='2'>2</option>
+              <option value='5'>5</option>
+              <option value='10'>10</option>
             </select>
             {pageNumber > 1 && (
               <Link href={`/petition?page=${pageNumber - 1}`}>
@@ -92,8 +85,16 @@ export default async function PetitionPage({ searchParams: { page = '' } }: Prop
       </div>
 
       <div className={styles.description}>
-        <PendingSignatures />
+        <h2>Admin Controls</h2>
+        {!session && (
+          <Link href='/' style={{ color: 'red', textDecoration: 'underline' }}>
+            Login with GitHub to create events
+          </Link>
+        )}
+        <PendingSignatures isLoggedIn={!session} />
       </div>
     </main>
   );
 }
+
+export const metadata: Metadata = { title: 'Petition' };

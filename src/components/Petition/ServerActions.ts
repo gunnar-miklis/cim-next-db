@@ -1,10 +1,10 @@
 'use server';
 
 import { revalidatePath } from 'next/cache';
-import prisma from '@/prisma/db';
 import { zfd } from 'zod-form-data';
 import { z } from 'zod';
-import type { InitalFormState } from './Form';
+import prisma from '@/prisma/db';
+import type { PetitionFormResponse } from './Form';
 
 const formValidator = zfd.formData({
   name: zfd.text(z.string().max(48).optional()),
@@ -28,7 +28,7 @@ export async function deleteSignature(id: string) {
 }
 
 export async function addSignature(prevState: unknown, formData: FormData) {
-  const response: InitalFormState = {
+  const response: PetitionFormResponse = {
     status: null,
     message: '',
   };

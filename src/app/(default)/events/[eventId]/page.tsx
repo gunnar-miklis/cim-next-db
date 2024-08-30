@@ -1,19 +1,15 @@
+import type { Metadata } from 'next';
+import Link from 'next/link';
 import prisma from '@/prisma/db';
 import type { Event } from '@/prisma/generated/client';
 import styles from '@/src/styles/app.module.css';
-import type { Metadata } from 'next';
-import Link from 'next/link';
+import Image from 'next/image';
 
 type Props = Event & { params: { eventId: string } };
 export default async function EventPage({ params: { eventId } }: Props) {
-  const {
-    name,
-    description,
-    dateStart,
-    dateEnd,
-    venueId,
-    category: categories,
-  } = await getEventData(parseEventId(eventId));
+  const { name, description, image, dateStart, dateEnd, venueId, categories } = await getEventData(
+    parseEventId(eventId),
+  );
 
   const venue = await getNextEventsInVenue(venueId, parseEventId(eventId));
 
@@ -33,45 +29,49 @@ export default async function EventPage({ params: { eventId } }: Props) {
         {description && <p>{description}</p>}
       </div>
 
-      <div className={styles.description}>
-        <dl className={styles.dList}>
-          {dateEnd ? (
-            <>
-              <dt>Start Date</dt>
-              <dd>
-                <time dateTime={dateStart.toISOString()}>{dateStart.toLocaleDateString('de')}</time>
-              </dd>
+      {image && (
+        <div className={styles.description} style={{ alignItems: 'center' }}>
+          <Image src={image.url} alt={image.name} width={200} height={200} />
+        </div>
+      )}
 
-              <dt>End Date</dt>
-              <dd>
-                <time dateTime={dateEnd.toISOString()}>{dateEnd.toLocaleDateString('de')}</time>
-              </dd>
-            </>
-          ) : (
-            <>
-              <dt>Date</dt>
-              <dd>
-                <time dateTime={dateStart.toISOString()}>{dateStart.toLocaleDateString('de')}</time>
-              </dd>
-            </>
-          )}
+      <dl className={`${styles.description} ${styles.dList}`}>
+        {dateEnd ? (
+          <>
+            <dt>Start Date</dt>
+            <dd>
+              <time dateTime={dateStart.toISOString()}>{dateStart.toLocaleDateString('de')}</time>
+            </dd>
 
-          {categories.length > 0 && (
-            <>
-              <dt>Categories</dt>
-              <dd>{categories.map((category) => category.title).join(', ')}</dd>
-            </>
-          )}
-        </dl>
-      </div>
+            <dt>End Date</dt>
+            <dd>
+              <time dateTime={dateEnd.toISOString()}>{dateEnd.toLocaleDateString('de')}</time>
+            </dd>
+          </>
+        ) : (
+          <>
+            <dt>Date</dt>
+            <dd>
+              <time dateTime={dateStart.toISOString()}>{dateStart.toLocaleDateString('de')}</time>
+            </dd>
+          </>
+        )}
+
+        {categories.length > 0 && (
+          <>
+            <dt>Categories</dt>
+            <dd>{categories.map((category) => category.name).join(', ')}</dd>
+          </>
+        )}
+      </dl>
 
       <br />
 
       <section className={styles.description}>
         <h2>Upcoming events @{venue.name}</h2>
 
-        {venue.event.length ? (
-          venue.event.map(({ id, name, dateStart }) => (
+        {venue.events.length ? (
+          venue.events.map(({ id, name, dateStart }) => (
             <Link key={id} href={`/events/${id}`} className={styles.card}>
               <h3>{name}</h3>
               <p>{dateStart.toLocaleDateString('de')}</p>
@@ -85,19 +85,26 @@ export default async function EventPage({ params: { eventId } }: Props) {
   );
 }
 
-function parseEventId(eventId: string) {
-  const id: number = Math.floor(parseInt(eventId));
-  return id;
+export const revalidate = 36000;
+
+export async function generateMetadata({ params: { eventId } }: Props): Promise<Metadata> {
+  const { name } = await getEventData(parseEventId(eventId));
+  return { title: name };
+}
+
+function parseEventId(eventId: string): number {
+  return Math.floor(parseInt(eventId));
 }
 
 async function getEventData(id: number) {
   const event = await prisma.event.findUnique({
     where: { id },
     include: {
+      image: true,
       venue: true,
-      category: {
+      categories: {
         select: {
-          title: true,
+          name: true,
         },
       },
     },
@@ -106,18 +113,13 @@ async function getEventData(id: number) {
   else throw new Error('Unable to fetch event data');
 }
 
-export async function generateMetadata({ params: { eventId } }: Props): Promise<Metadata> {
-  const { name } = await getEventData(parseEventId(eventId));
-  return { title: name };
-}
-
 async function getNextEventsInVenue(venueId: number, eventId: number) {
   const venue = await prisma.venue.findUnique({
     where: {
       id: venueId,
     },
     include: {
-      event: {
+      events: {
         where: {
           id: {
             not: eventId,

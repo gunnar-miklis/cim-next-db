@@ -1,13 +1,15 @@
-import Image from 'next/image';
-import styles from '@/src/styles/app.module.css';
-import Link from 'next/link';
 import type { Metadata } from 'next';
+import Link from 'next/link';
+import Image from 'next/image';
+import { auth } from '@/src/auth';
+import User from '@/src/components/Auth/User';
+import SignIn from '@/src/components/Auth/SignIn';
+import SignOut from '@/src/components/Auth/SignOut';
+import styles from '@/src/styles/app.module.css';
 
-export const metadata: Metadata = {
-  title: 'Next DB',
-};
+export default async function Home() {
+  const session = await auth();
 
-export default function Home() {
   return (
     <main className={styles.main}>
       <Image
@@ -35,6 +37,14 @@ export default function Home() {
         </h2>
         <p>Go to the Events page</p>
       </Link>
+
+      <article className={styles.description}>
+        <h1>User</h1>
+        <div>{session && <User {...session.user} />}</div>
+        <div>{session ? <SignOut /> : <SignIn />}</div>
+      </article>
     </main>
   );
 }
+
+export const metadata: Metadata = { title: 'Next DB' };

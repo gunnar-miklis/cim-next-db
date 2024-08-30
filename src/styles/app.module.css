@@ -67,7 +67,9 @@
   gap: 1rem;
 }
 .form button,
-.inputWrapper input {
+.inputWrapper input,
+.inputWrapper select,
+.inputWrapper textarea {
   width: 100%;
   padding: 0.3rem;
 }
@@ -75,6 +77,17 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
+}
+.fieldSet {
+  display: flex;
+  gap: 0.6rem;
+  padding: 0.6rem;
+}
+.fieldSet label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
 }
 
 .dList dt {

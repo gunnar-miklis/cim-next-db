@@ -24,10 +24,10 @@ export type Signature = $Result.DefaultSelection<Prisma.$SignaturePayload>
  */
 export type Event = $Result.DefaultSelection<Prisma.$EventPayload>
 /**
- * Model Poster
+ * Model Image
  * 
  */
-export type Poster = $Result.DefaultSelection<Prisma.$PosterPayload>
+export type Image = $Result.DefaultSelection<Prisma.$ImagePayload>
 /**
  * Model Venue
  * 
@@ -183,14 +183,14 @@ export class PrismaClient<
   get event(): Prisma.EventDelegate<ExtArgs>;
 
   /**
-   * `prisma.poster`: Exposes CRUD operations for the **Poster** model.
+   * `prisma.image`: Exposes CRUD operations for the **Image** model.
     * Example usage:
     * ```ts
-    * // Fetch zero or more Posters
-    * const posters = await prisma.poster.findMany()
+    * // Fetch zero or more Images
+    * const images = await prisma.image.findMany()
     * ```
     */
-  get poster(): Prisma.PosterDelegate<ExtArgs>;
+  get image(): Prisma.ImageDelegate<ExtArgs>;
 
   /**
    * `prisma.venue`: Exposes CRUD operations for the **Venue** model.
@@ -652,7 +652,7 @@ export namespace Prisma {
   export const ModelName: {
     Signature: 'Signature',
     Event: 'Event',
-    Poster: 'Poster',
+    Image: 'Image',
     Venue: 'Venue',
     Category: 'Category'
   };
@@ -670,7 +670,7 @@ export namespace Prisma {
 
   export type TypeMap<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, ClientOptions = {}> = {
     meta: {
-      modelProps: "signature" | "event" | "poster" | "venue" | "category"
+      modelProps: "signature" | "event" | "image" | "venue" | "category"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -814,73 +814,73 @@ export namespace Prisma {
           }
         }
       }
-      Poster: {
-        payload: Prisma.$PosterPayload<ExtArgs>
-        fields: Prisma.PosterFieldRefs
+      Image: {
+        payload: Prisma.$ImagePayload<ExtArgs>
+        fields: Prisma.ImageFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.PosterFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PosterPayload> | null
+            args: Prisma.ImageFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ImagePayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.PosterFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PosterPayload>
+            args: Prisma.ImageFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ImagePayload>
           }
           findFirst: {
-            args: Prisma.PosterFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PosterPayload> | null
+            args: Prisma.ImageFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ImagePayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.PosterFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PosterPayload>
+            args: Prisma.ImageFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ImagePayload>
           }
           findMany: {
-            args: Prisma.PosterFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PosterPayload>[]
+            args: Prisma.ImageFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ImagePayload>[]
           }
           create: {
-            args: Prisma.PosterCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PosterPayload>
+            args: Prisma.ImageCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ImagePayload>
           }
           createMany: {
-            args: Prisma.PosterCreateManyArgs<ExtArgs>
+            args: Prisma.ImageCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           createManyAndReturn: {
-            args: Prisma.PosterCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PosterPayload>[]
+            args: Prisma.ImageCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ImagePayload>[]
           }
           delete: {
-            args: Prisma.PosterDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PosterPayload>
+            args: Prisma.ImageDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ImagePayload>
           }
           update: {
-            args: Prisma.PosterUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PosterPayload>
+            args: Prisma.ImageUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ImagePayload>
           }
           deleteMany: {
-            args: Prisma.PosterDeleteManyArgs<ExtArgs>
+            args: Prisma.ImageDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.PosterUpdateManyArgs<ExtArgs>
+            args: Prisma.ImageUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           upsert: {
-            args: Prisma.PosterUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PosterPayload>
+            args: Prisma.ImageUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ImagePayload>
           }
           aggregate: {
-            args: Prisma.PosterAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregatePoster>
+            args: Prisma.ImageAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateImage>
           }
           groupBy: {
-            args: Prisma.PosterGroupByArgs<ExtArgs>
-            result: $Utils.Optional<PosterGroupByOutputType>[]
+            args: Prisma.ImageGroupByArgs<ExtArgs>
+            result: $Utils.Optional<ImageGroupByOutputType>[]
           }
           count: {
-            args: Prisma.PosterCountArgs<ExtArgs>
-            result: $Utils.Optional<PosterCountAggregateOutputType> | number
+            args: Prisma.ImageCountArgs<ExtArgs>
+            result: $Utils.Optional<ImageCountAggregateOutputType> | number
           }
         }
       }
@@ -1185,11 +1185,11 @@ export namespace Prisma {
    */
 
   export type EventCountOutputType = {
-    category: number
+    categories: number
   }
 
   export type EventCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    category?: boolean | EventCountOutputTypeCountCategoryArgs
+    categories?: boolean | EventCountOutputTypeCountCategoriesArgs
   }
 
   // Custom InputTypes
@@ -1206,7 +1206,7 @@ export namespace Prisma {
   /**
    * EventCountOutputType without action
    */
-  export type EventCountOutputTypeCountCategoryArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type EventCountOutputTypeCountCategoriesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: CategoryWhereInput
   }
 
@@ -1216,11 +1216,11 @@ export namespace Prisma {
    */
 
   export type VenueCountOutputType = {
-    event: number
+    events: number
   }
 
   export type VenueCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    event?: boolean | VenueCountOutputTypeCountEventArgs
+    events?: boolean | VenueCountOutputTypeCountEventsArgs
   }
 
   // Custom InputTypes
@@ -1237,7 +1237,7 @@ export namespace Prisma {
   /**
    * VenueCountOutputType without action
    */
-  export type VenueCountOutputTypeCountEventArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type VenueCountOutputTypeCountEventsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: EventWhereInput
   }
 
@@ -1247,11 +1247,11 @@ export namespace Prisma {
    */
 
   export type CategoryCountOutputType = {
-    event: number
+    events: number
   }
 
   export type CategoryCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    event?: boolean | CategoryCountOutputTypeCountEventArgs
+    events?: boolean | CategoryCountOutputTypeCountEventsArgs
   }
 
   // Custom InputTypes
@@ -1268,7 +1268,7 @@ export namespace Prisma {
   /**
    * CategoryCountOutputType without action
    */
-  export type CategoryCountOutputTypeCountEventArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type CategoryCountOutputTypeCountEventsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: EventWhereInput
   }
 
@@ -1289,52 +1289,58 @@ export namespace Prisma {
 
   export type SignatureMinAggregateOutputType = {
     id: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
     name: string | null
     email: string | null
     approved: boolean | null
-    date: Date | null
   }
 
   export type SignatureMaxAggregateOutputType = {
     id: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
     name: string | null
     email: string | null
     approved: boolean | null
-    date: Date | null
   }
 
   export type SignatureCountAggregateOutputType = {
     id: number
+    createdAt: number
+    updatedAt: number
     name: number
     email: number
     approved: number
-    date: number
     _all: number
   }
 
 
   export type SignatureMinAggregateInputType = {
     id?: true
+    createdAt?: true
+    updatedAt?: true
     name?: true
     email?: true
     approved?: true
-    date?: true
   }
 
   export type SignatureMaxAggregateInputType = {
     id?: true
+    createdAt?: true
+    updatedAt?: true
     name?: true
     email?: true
     approved?: true
-    date?: true
   }
 
   export type SignatureCountAggregateInputType = {
     id?: true
+    createdAt?: true
+    updatedAt?: true
     name?: true
     email?: true
     approved?: true
-    date?: true
     _all?: true
   }
 
@@ -1412,10 +1418,11 @@ export namespace Prisma {
 
   export type SignatureGroupByOutputType = {
     id: string
+    createdAt: Date
+    updatedAt: Date
     name: string | null
     email: string
     approved: boolean
-    date: Date
     _count: SignatureCountAggregateOutputType | null
     _min: SignatureMinAggregateOutputType | null
     _max: SignatureMaxAggregateOutputType | null
@@ -1437,26 +1444,29 @@ export namespace Prisma {
 
   export type SignatureSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
     name?: boolean
     email?: boolean
     approved?: boolean
-    date?: boolean
   }, ExtArgs["result"]["signature"]>
 
   export type SignatureSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
     name?: boolean
     email?: boolean
     approved?: boolean
-    date?: boolean
   }, ExtArgs["result"]["signature"]>
 
   export type SignatureSelectScalar = {
     id?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
     name?: boolean
     email?: boolean
     approved?: boolean
-    date?: boolean
   }
 
 
@@ -1465,10 +1475,11 @@ export namespace Prisma {
     objects: {}
     scalars: $Extensions.GetPayloadResult<{
       id: string
+      createdAt: Date
+      updatedAt: Date
       name: string | null
       email: string
       approved: boolean
-      date: Date
     }, ExtArgs["result"]["signature"]>
     composites: {}
   }
@@ -1863,10 +1874,11 @@ export namespace Prisma {
    */ 
   interface SignatureFieldRefs {
     readonly id: FieldRef<"Signature", 'String'>
+    readonly createdAt: FieldRef<"Signature", 'DateTime'>
+    readonly updatedAt: FieldRef<"Signature", 'DateTime'>
     readonly name: FieldRef<"Signature", 'String'>
     readonly email: FieldRef<"Signature", 'String'>
     readonly approved: FieldRef<"Signature", 'Boolean'>
-    readonly date: FieldRef<"Signature", 'DateTime'>
   }
     
 
@@ -2178,32 +2190,38 @@ export namespace Prisma {
   }
 
   export type EventMinAggregateOutputType = {
-    createdAt: Date | null
     id: number | null
+    createdAt: Date | null
+    updatedAt: Date | null
     name: string | null
     description: string | null
     dateStart: Date | null
     dateEnd: Date | null
+    imageId: string | null
     venueId: number | null
   }
 
   export type EventMaxAggregateOutputType = {
-    createdAt: Date | null
     id: number | null
+    createdAt: Date | null
+    updatedAt: Date | null
     name: string | null
     description: string | null
     dateStart: Date | null
     dateEnd: Date | null
+    imageId: string | null
     venueId: number | null
   }
 
   export type EventCountAggregateOutputType = {
-    createdAt: number
     id: number
+    createdAt: number
+    updatedAt: number
     name: number
     description: number
     dateStart: number
     dateEnd: number
+    imageId: number
     venueId: number
     _all: number
   }
@@ -2220,32 +2238,38 @@ export namespace Prisma {
   }
 
   export type EventMinAggregateInputType = {
-    createdAt?: true
     id?: true
+    createdAt?: true
+    updatedAt?: true
     name?: true
     description?: true
     dateStart?: true
     dateEnd?: true
+    imageId?: true
     venueId?: true
   }
 
   export type EventMaxAggregateInputType = {
-    createdAt?: true
     id?: true
+    createdAt?: true
+    updatedAt?: true
     name?: true
     description?: true
     dateStart?: true
     dateEnd?: true
+    imageId?: true
     venueId?: true
   }
 
   export type EventCountAggregateInputType = {
-    createdAt?: true
     id?: true
+    createdAt?: true
+    updatedAt?: true
     name?: true
     description?: true
     dateStart?: true
     dateEnd?: true
+    imageId?: true
     venueId?: true
     _all?: true
   }
@@ -2337,12 +2361,14 @@ export namespace Prisma {
   }
 
   export type EventGroupByOutputType = {
-    createdAt: Date
     id: number
+    createdAt: Date
+    updatedAt: Date
     name: string
     description: string | null
     dateStart: Date
     dateEnd: Date | null
+    imageId: string | null
     venueId: number
     _count: EventCountAggregateOutputType | null
     _avg: EventAvgAggregateOutputType | null
@@ -2366,44 +2392,50 @@ export namespace Prisma {
 
 
   export type EventSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    createdAt?: boolean
     id?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
     name?: boolean
     description?: boolean
     dateStart?: boolean
     dateEnd?: boolean
+    imageId?: boolean
     venueId?: boolean
-    poster?: boolean | Event$posterArgs<ExtArgs>
+    image?: boolean | Event$imageArgs<ExtArgs>
     venue?: boolean | VenueDefaultArgs<ExtArgs>
-    category?: boolean | Event$categoryArgs<ExtArgs>
+    categories?: boolean | Event$categoriesArgs<ExtArgs>
     _count?: boolean | EventCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["event"]>
 
   export type EventSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    createdAt?: boolean
     id?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
     name?: boolean
     description?: boolean
     dateStart?: boolean
     dateEnd?: boolean
+    imageId?: boolean
     venueId?: boolean
     venue?: boolean | VenueDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["event"]>
 
   export type EventSelectScalar = {
-    createdAt?: boolean
     id?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
     name?: boolean
     description?: boolean
     dateStart?: boolean
     dateEnd?: boolean
+    imageId?: boolean
     venueId?: boolean
   }
 
   export type EventInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    poster?: boolean | Event$posterArgs<ExtArgs>
+    image?: boolean | Event$imageArgs<ExtArgs>
     venue?: boolean | VenueDefaultArgs<ExtArgs>
-    category?: boolean | Event$categoryArgs<ExtArgs>
+    categories?: boolean | Event$categoriesArgs<ExtArgs>
     _count?: boolean | EventCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type EventIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
@@ -2413,17 +2445,19 @@ export namespace Prisma {
   export type $EventPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Event"
     objects: {
-      poster: Prisma.$PosterPayload<ExtArgs> | null
+      image: Prisma.$ImagePayload<ExtArgs> | null
       venue: Prisma.$VenuePayload<ExtArgs>
-      category: Prisma.$CategoryPayload<ExtArgs>[]
+      categories: Prisma.$CategoryPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
-      createdAt: Date
       id: number
+      createdAt: Date
+      updatedAt: Date
       name: string
       description: string | null
       dateStart: Date
       dateEnd: Date | null
+      imageId: string | null
       venueId: number
     }, ExtArgs["result"]["event"]>
     composites: {}
@@ -2508,8 +2542,8 @@ export namespace Prisma {
      * // Get first 10 Events
      * const events = await prisma.event.findMany({ take: 10 })
      * 
-     * // Only select the `createdAt`
-     * const eventWithCreatedAtOnly = await prisma.event.findMany({ select: { createdAt: true } })
+     * // Only select the `id`
+     * const eventWithIdOnly = await prisma.event.findMany({ select: { id: true } })
      * 
      */
     findMany<T extends EventFindManyArgs>(args?: SelectSubset<T, EventFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$EventPayload<ExtArgs>, T, "findMany">>
@@ -2553,9 +2587,9 @@ export namespace Prisma {
      *   ]
      * })
      * 
-     * // Create many Events and only return the `createdAt`
-     * const eventWithCreatedAtOnly = await prisma.event.createManyAndReturn({ 
-     *   select: { createdAt: true },
+     * // Create many Events and only return the `id`
+     * const eventWithIdOnly = await prisma.event.createManyAndReturn({ 
+     *   select: { id: true },
      *   data: [
      *     // ... provide data here
      *   ]
@@ -2789,9 +2823,9 @@ export namespace Prisma {
    */
   export interface Prisma__EventClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    poster<T extends Event$posterArgs<ExtArgs> = {}>(args?: Subset<T, Event$posterArgs<ExtArgs>>): Prisma__PosterClient<$Result.GetResult<Prisma.$PosterPayload<ExtArgs>, T, "findUniqueOrThrow"> | null, null, ExtArgs>
+    image<T extends Event$imageArgs<ExtArgs> = {}>(args?: Subset<T, Event$imageArgs<ExtArgs>>): Prisma__ImageClient<$Result.GetResult<Prisma.$ImagePayload<ExtArgs>, T, "findUniqueOrThrow"> | null, null, ExtArgs>
     venue<T extends VenueDefaultArgs<ExtArgs> = {}>(args?: Subset<T, VenueDefaultArgs<ExtArgs>>): Prisma__VenueClient<$Result.GetResult<Prisma.$VenuePayload<ExtArgs>, T, "findUniqueOrThrow"> | Null, Null, ExtArgs>
-    category<T extends Event$categoryArgs<ExtArgs> = {}>(args?: Subset<T, Event$categoryArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CategoryPayload<ExtArgs>, T, "findMany"> | Null>
+    categories<T extends Event$categoriesArgs<ExtArgs> = {}>(args?: Subset<T, Event$categoriesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CategoryPayload<ExtArgs>, T, "findMany"> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2821,12 +2855,14 @@ export namespace Prisma {
    * Fields of the Event model
    */ 
   interface EventFieldRefs {
-    readonly createdAt: FieldRef<"Event", 'DateTime'>
     readonly id: FieldRef<"Event", 'Int'>
+    readonly createdAt: FieldRef<"Event", 'DateTime'>
+    readonly updatedAt: FieldRef<"Event", 'DateTime'>
     readonly name: FieldRef<"Event", 'String'>
     readonly description: FieldRef<"Event", 'String'>
     readonly dateStart: FieldRef<"Event", 'DateTime'>
     readonly dateEnd: FieldRef<"Event", 'DateTime'>
+    readonly imageId: FieldRef<"Event", 'String'>
     readonly venueId: FieldRef<"Event", 'Int'>
   }
     
@@ -3146,24 +3182,24 @@ export namespace Prisma {
   }
 
   /**
-   * Event.poster
+   * Event.image
    */
-  export type Event$posterArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Event$imageArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Poster
+     * Select specific fields to fetch from the Image
      */
-    select?: PosterSelect<ExtArgs> | null
+    select?: ImageSelect<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: PosterInclude<ExtArgs> | null
-    where?: PosterWhereInput
+    include?: ImageInclude<ExtArgs> | null
+    where?: ImageWhereInput
   }
 
   /**
-   * Event.category
+   * Event.categories
    */
-  export type Event$categoryArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Event$categoriesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * Select specific fields to fetch from the Category
      */
@@ -3196,372 +3232,383 @@ export namespace Prisma {
 
 
   /**
-   * Model Poster
+   * Model Image
    */
 
-  export type AggregatePoster = {
-    _count: PosterCountAggregateOutputType | null
-    _avg: PosterAvgAggregateOutputType | null
-    _sum: PosterSumAggregateOutputType | null
-    _min: PosterMinAggregateOutputType | null
-    _max: PosterMaxAggregateOutputType | null
+  export type AggregateImage = {
+    _count: ImageCountAggregateOutputType | null
+    _avg: ImageAvgAggregateOutputType | null
+    _sum: ImageSumAggregateOutputType | null
+    _min: ImageMinAggregateOutputType | null
+    _max: ImageMaxAggregateOutputType | null
   }
 
-  export type PosterAvgAggregateOutputType = {
+  export type ImageAvgAggregateOutputType = {
     eventId: number | null
   }
 
-  export type PosterSumAggregateOutputType = {
+  export type ImageSumAggregateOutputType = {
     eventId: number | null
   }
 
-  export type PosterMinAggregateOutputType = {
-    createdAt: Date | null
+  export type ImageMinAggregateOutputType = {
     id: string | null
-    title: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+    name: string | null
     url: string | null
     eventId: number | null
   }
 
-  export type PosterMaxAggregateOutputType = {
-    createdAt: Date | null
+  export type ImageMaxAggregateOutputType = {
     id: string | null
-    title: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+    name: string | null
     url: string | null
     eventId: number | null
   }
 
-  export type PosterCountAggregateOutputType = {
-    createdAt: number
+  export type ImageCountAggregateOutputType = {
     id: number
-    title: number
+    createdAt: number
+    updatedAt: number
+    name: number
     url: number
     eventId: number
     _all: number
   }
 
 
-  export type PosterAvgAggregateInputType = {
+  export type ImageAvgAggregateInputType = {
     eventId?: true
   }
 
-  export type PosterSumAggregateInputType = {
+  export type ImageSumAggregateInputType = {
     eventId?: true
   }
 
-  export type PosterMinAggregateInputType = {
-    createdAt?: true
+  export type ImageMinAggregateInputType = {
     id?: true
-    title?: true
+    createdAt?: true
+    updatedAt?: true
+    name?: true
     url?: true
     eventId?: true
   }
 
-  export type PosterMaxAggregateInputType = {
-    createdAt?: true
+  export type ImageMaxAggregateInputType = {
     id?: true
-    title?: true
+    createdAt?: true
+    updatedAt?: true
+    name?: true
     url?: true
     eventId?: true
   }
 
-  export type PosterCountAggregateInputType = {
-    createdAt?: true
+  export type ImageCountAggregateInputType = {
     id?: true
-    title?: true
+    createdAt?: true
+    updatedAt?: true
+    name?: true
     url?: true
     eventId?: true
     _all?: true
   }
 
-  export type PosterAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type ImageAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Poster to aggregate.
+     * Filter which Image to aggregate.
      */
-    where?: PosterWhereInput
+    where?: ImageWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Posters to fetch.
+     * Determine the order of Images to fetch.
      */
-    orderBy?: PosterOrderByWithRelationInput | PosterOrderByWithRelationInput[]
+    orderBy?: ImageOrderByWithRelationInput | ImageOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: PosterWhereUniqueInput
+    cursor?: ImageWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Posters from the position of the cursor.
+     * Take `±n` Images from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Posters.
+     * Skip the first `n` Images.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned Posters
+     * Count returned Images
     **/
-    _count?: true | PosterCountAggregateInputType
+    _count?: true | ImageCountAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to average
     **/
-    _avg?: PosterAvgAggregateInputType
+    _avg?: ImageAvgAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to sum
     **/
-    _sum?: PosterSumAggregateInputType
+    _sum?: ImageSumAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the minimum value
     **/
-    _min?: PosterMinAggregateInputType
+    _min?: ImageMinAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the maximum value
     **/
-    _max?: PosterMaxAggregateInputType
+    _max?: ImageMaxAggregateInputType
   }
 
-  export type GetPosterAggregateType<T extends PosterAggregateArgs> = {
-        [P in keyof T & keyof AggregatePoster]: P extends '_count' | 'count'
+  export type GetImageAggregateType<T extends ImageAggregateArgs> = {
+        [P in keyof T & keyof AggregateImage]: P extends '_count' | 'count'
       ? T[P] extends true
         ? number
-        : GetScalarType<T[P], AggregatePoster[P]>
-      : GetScalarType<T[P], AggregatePoster[P]>
+        : GetScalarType<T[P], AggregateImage[P]>
+      : GetScalarType<T[P], AggregateImage[P]>
   }
 
 
 
 
-  export type PosterGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: PosterWhereInput
-    orderBy?: PosterOrderByWithAggregationInput | PosterOrderByWithAggregationInput[]
-    by: PosterScalarFieldEnum[] | PosterScalarFieldEnum
-    having?: PosterScalarWhereWithAggregatesInput
+  export type ImageGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ImageWhereInput
+    orderBy?: ImageOrderByWithAggregationInput | ImageOrderByWithAggregationInput[]
+    by: ImageScalarFieldEnum[] | ImageScalarFieldEnum
+    having?: ImageScalarWhereWithAggregatesInput
     take?: number
     skip?: number
-    _count?: PosterCountAggregateInputType | true
-    _avg?: PosterAvgAggregateInputType
-    _sum?: PosterSumAggregateInputType
-    _min?: PosterMinAggregateInputType
-    _max?: PosterMaxAggregateInputType
+    _count?: ImageCountAggregateInputType | true
+    _avg?: ImageAvgAggregateInputType
+    _sum?: ImageSumAggregateInputType
+    _min?: ImageMinAggregateInputType
+    _max?: ImageMaxAggregateInputType
   }
 
-  export type PosterGroupByOutputType = {
-    createdAt: Date
+  export type ImageGroupByOutputType = {
     id: string
-    title: string
+    createdAt: Date
+    updatedAt: Date
+    name: string
     url: string
     eventId: number
-    _count: PosterCountAggregateOutputType | null
-    _avg: PosterAvgAggregateOutputType | null
-    _sum: PosterSumAggregateOutputType | null
-    _min: PosterMinAggregateOutputType | null
-    _max: PosterMaxAggregateOutputType | null
+    _count: ImageCountAggregateOutputType | null
+    _avg: ImageAvgAggregateOutputType | null
+    _sum: ImageSumAggregateOutputType | null
+    _min: ImageMinAggregateOutputType | null
+    _max: ImageMaxAggregateOutputType | null
   }
 
-  type GetPosterGroupByPayload<T extends PosterGroupByArgs> = Prisma.PrismaPromise<
+  type GetImageGroupByPayload<T extends ImageGroupByArgs> = Prisma.PrismaPromise<
     Array<
-      PickEnumerable<PosterGroupByOutputType, T['by']> &
+      PickEnumerable<ImageGroupByOutputType, T['by']> &
         {
-          [P in ((keyof T) & (keyof PosterGroupByOutputType))]: P extends '_count'
+          [P in ((keyof T) & (keyof ImageGroupByOutputType))]: P extends '_count'
             ? T[P] extends boolean
               ? number
-              : GetScalarType<T[P], PosterGroupByOutputType[P]>
-            : GetScalarType<T[P], PosterGroupByOutputType[P]>
+              : GetScalarType<T[P], ImageGroupByOutputType[P]>
+            : GetScalarType<T[P], ImageGroupByOutputType[P]>
         }
       >
     >
 
 
-  export type PosterSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    createdAt?: boolean
+  export type ImageSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    title?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    name?: boolean
     url?: boolean
     eventId?: boolean
     event?: boolean | EventDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["poster"]>
+  }, ExtArgs["result"]["image"]>
 
-  export type PosterSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    createdAt?: boolean
+  export type ImageSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    title?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    name?: boolean
     url?: boolean
     eventId?: boolean
     event?: boolean | EventDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["poster"]>
+  }, ExtArgs["result"]["image"]>
 
-  export type PosterSelectScalar = {
-    createdAt?: boolean
+  export type ImageSelectScalar = {
     id?: boolean
-    title?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    name?: boolean
     url?: boolean
     eventId?: boolean
   }
 
-  export type PosterInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type ImageInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     event?: boolean | EventDefaultArgs<ExtArgs>
   }
-  export type PosterIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type ImageIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     event?: boolean | EventDefaultArgs<ExtArgs>
   }
 
-  export type $PosterPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Poster"
+  export type $ImagePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Image"
     objects: {
       event: Prisma.$EventPayload<ExtArgs>
     }
     scalars: $Extensions.GetPayloadResult<{
-      createdAt: Date
       id: string
-      title: string
+      createdAt: Date
+      updatedAt: Date
+      name: string
       url: string
       eventId: number
-    }, ExtArgs["result"]["poster"]>
+    }, ExtArgs["result"]["image"]>
     composites: {}
   }
 
-  type PosterGetPayload<S extends boolean | null | undefined | PosterDefaultArgs> = $Result.GetResult<Prisma.$PosterPayload, S>
+  type ImageGetPayload<S extends boolean | null | undefined | ImageDefaultArgs> = $Result.GetResult<Prisma.$ImagePayload, S>
 
-  type PosterCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
-    Omit<PosterFindManyArgs, 'select' | 'include' | 'distinct'> & {
-      select?: PosterCountAggregateInputType | true
+  type ImageCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = 
+    Omit<ImageFindManyArgs, 'select' | 'include' | 'distinct'> & {
+      select?: ImageCountAggregateInputType | true
     }
 
-  export interface PosterDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Poster'], meta: { name: 'Poster' } }
+  export interface ImageDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Image'], meta: { name: 'Image' } }
     /**
-     * Find zero or one Poster that matches the filter.
-     * @param {PosterFindUniqueArgs} args - Arguments to find a Poster
+     * Find zero or one Image that matches the filter.
+     * @param {ImageFindUniqueArgs} args - Arguments to find a Image
      * @example
-     * // Get one Poster
-     * const poster = await prisma.poster.findUnique({
+     * // Get one Image
+     * const image = await prisma.image.findUnique({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUnique<T extends PosterFindUniqueArgs>(args: SelectSubset<T, PosterFindUniqueArgs<ExtArgs>>): Prisma__PosterClient<$Result.GetResult<Prisma.$PosterPayload<ExtArgs>, T, "findUnique"> | null, null, ExtArgs>
+    findUnique<T extends ImageFindUniqueArgs>(args: SelectSubset<T, ImageFindUniqueArgs<ExtArgs>>): Prisma__ImageClient<$Result.GetResult<Prisma.$ImagePayload<ExtArgs>, T, "findUnique"> | null, null, ExtArgs>
 
     /**
-     * Find one Poster that matches the filter or throw an error with `error.code='P2025'` 
+     * Find one Image that matches the filter or throw an error with `error.code='P2025'` 
      * if no matches were found.
-     * @param {PosterFindUniqueOrThrowArgs} args - Arguments to find a Poster
+     * @param {ImageFindUniqueOrThrowArgs} args - Arguments to find a Image
      * @example
-     * // Get one Poster
-     * const poster = await prisma.poster.findUniqueOrThrow({
+     * // Get one Image
+     * const image = await prisma.image.findUniqueOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUniqueOrThrow<T extends PosterFindUniqueOrThrowArgs>(args: SelectSubset<T, PosterFindUniqueOrThrowArgs<ExtArgs>>): Prisma__PosterClient<$Result.GetResult<Prisma.$PosterPayload<ExtArgs>, T, "findUniqueOrThrow">, never, ExtArgs>
+    findUniqueOrThrow<T extends ImageFindUniqueOrThrowArgs>(args: SelectSubset<T, ImageFindUniqueOrThrowArgs<ExtArgs>>): Prisma__ImageClient<$Result.GetResult<Prisma.$ImagePayload<ExtArgs>, T, "findUniqueOrThrow">, never, ExtArgs>
 
     /**
-     * Find the first Poster that matches the filter.
+     * Find the first Image that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {PosterFindFirstArgs} args - Arguments to find a Poster
+     * @param {ImageFindFirstArgs} args - Arguments to find a Image
      * @example
-     * // Get one Poster
-     * const poster = await prisma.poster.findFirst({
+     * // Get one Image
+     * const image = await prisma.image.findFirst({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirst<T extends PosterFindFirstArgs>(args?: SelectSubset<T, PosterFindFirstArgs<ExtArgs>>): Prisma__PosterClient<$Result.GetResult<Prisma.$PosterPayload<ExtArgs>, T, "findFirst"> | null, null, ExtArgs>
+    findFirst<T extends ImageFindFirstArgs>(args?: SelectSubset<T, ImageFindFirstArgs<ExtArgs>>): Prisma__ImageClient<$Result.GetResult<Prisma.$ImagePayload<ExtArgs>, T, "findFirst"> | null, null, ExtArgs>
 
     /**
-     * Find the first Poster that matches the filter or
+     * Find the first Image that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {PosterFindFirstOrThrowArgs} args - Arguments to find a Poster
+     * @param {ImageFindFirstOrThrowArgs} args - Arguments to find a Image
      * @example
-     * // Get one Poster
-     * const poster = await prisma.poster.findFirstOrThrow({
+     * // Get one Image
+     * const image = await prisma.image.findFirstOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirstOrThrow<T extends PosterFindFirstOrThrowArgs>(args?: SelectSubset<T, PosterFindFirstOrThrowArgs<ExtArgs>>): Prisma__PosterClient<$Result.GetResult<Prisma.$PosterPayload<ExtArgs>, T, "findFirstOrThrow">, never, ExtArgs>
+    findFirstOrThrow<T extends ImageFindFirstOrThrowArgs>(args?: SelectSubset<T, ImageFindFirstOrThrowArgs<ExtArgs>>): Prisma__ImageClient<$Result.GetResult<Prisma.$ImagePayload<ExtArgs>, T, "findFirstOrThrow">, never, ExtArgs>
 
     /**
-     * Find zero or more Posters that matches the filter.
+     * Find zero or more Images that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {PosterFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {ImageFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
-     * // Get all Posters
-     * const posters = await prisma.poster.findMany()
+     * // Get all Images
+     * const images = await prisma.image.findMany()
      * 
-     * // Get first 10 Posters
-     * const posters = await prisma.poster.findMany({ take: 10 })
+     * // Get first 10 Images
+     * const images = await prisma.image.findMany({ take: 10 })
      * 
-     * // Only select the `createdAt`
-     * const posterWithCreatedAtOnly = await prisma.poster.findMany({ select: { createdAt: true } })
+     * // Only select the `id`
+     * const imageWithIdOnly = await prisma.image.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends PosterFindManyArgs>(args?: SelectSubset<T, PosterFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PosterPayload<ExtArgs>, T, "findMany">>
+    findMany<T extends ImageFindManyArgs>(args?: SelectSubset<T, ImageFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ImagePayload<ExtArgs>, T, "findMany">>
 
     /**
-     * Create a Poster.
-     * @param {PosterCreateArgs} args - Arguments to create a Poster.
+     * Create a Image.
+     * @param {ImageCreateArgs} args - Arguments to create a Image.
      * @example
-     * // Create one Poster
-     * const Poster = await prisma.poster.create({
+     * // Create one Image
+     * const Image = await prisma.image.create({
      *   data: {
-     *     // ... data to create a Poster
+     *     // ... data to create a Image
      *   }
      * })
      * 
      */
-    create<T extends PosterCreateArgs>(args: SelectSubset<T, PosterCreateArgs<ExtArgs>>): Prisma__PosterClient<$Result.GetResult<Prisma.$PosterPayload<ExtArgs>, T, "create">, never, ExtArgs>
+    create<T extends ImageCreateArgs>(args: SelectSubset<T, ImageCreateArgs<ExtArgs>>): Prisma__ImageClient<$Result.GetResult<Prisma.$ImagePayload<ExtArgs>, T, "create">, never, ExtArgs>
 
     /**
-     * Create many Posters.
-     * @param {PosterCreateManyArgs} args - Arguments to create many Posters.
+     * Create many Images.
+     * @param {ImageCreateManyArgs} args - Arguments to create many Images.
      * @example
-     * // Create many Posters
-     * const poster = await prisma.poster.createMany({
+     * // Create many Images
+     * const image = await prisma.image.createMany({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      *     
      */
-    createMany<T extends PosterCreateManyArgs>(args?: SelectSubset<T, PosterCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends ImageCreateManyArgs>(args?: SelectSubset<T, ImageCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Create many Posters and returns the data saved in the database.
-     * @param {PosterCreateManyAndReturnArgs} args - Arguments to create many Posters.
+     * Create many Images and returns the data saved in the database.
+     * @param {ImageCreateManyAndReturnArgs} args - Arguments to create many Images.
      * @example
-     * // Create many Posters
-     * const poster = await prisma.poster.createManyAndReturn({
+     * // Create many Images
+     * const image = await prisma.image.createManyAndReturn({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      * 
-     * // Create many Posters and only return the `createdAt`
-     * const posterWithCreatedAtOnly = await prisma.poster.createManyAndReturn({ 
-     *   select: { createdAt: true },
+     * // Create many Images and only return the `id`
+     * const imageWithIdOnly = await prisma.image.createManyAndReturn({ 
+     *   select: { id: true },
      *   data: [
      *     // ... provide data here
      *   ]
@@ -3570,28 +3617,28 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    createManyAndReturn<T extends PosterCreateManyAndReturnArgs>(args?: SelectSubset<T, PosterCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PosterPayload<ExtArgs>, T, "createManyAndReturn">>
+    createManyAndReturn<T extends ImageCreateManyAndReturnArgs>(args?: SelectSubset<T, ImageCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ImagePayload<ExtArgs>, T, "createManyAndReturn">>
 
     /**
-     * Delete a Poster.
-     * @param {PosterDeleteArgs} args - Arguments to delete one Poster.
+     * Delete a Image.
+     * @param {ImageDeleteArgs} args - Arguments to delete one Image.
      * @example
-     * // Delete one Poster
-     * const Poster = await prisma.poster.delete({
+     * // Delete one Image
+     * const Image = await prisma.image.delete({
      *   where: {
-     *     // ... filter to delete one Poster
+     *     // ... filter to delete one Image
      *   }
      * })
      * 
      */
-    delete<T extends PosterDeleteArgs>(args: SelectSubset<T, PosterDeleteArgs<ExtArgs>>): Prisma__PosterClient<$Result.GetResult<Prisma.$PosterPayload<ExtArgs>, T, "delete">, never, ExtArgs>
+    delete<T extends ImageDeleteArgs>(args: SelectSubset<T, ImageDeleteArgs<ExtArgs>>): Prisma__ImageClient<$Result.GetResult<Prisma.$ImagePayload<ExtArgs>, T, "delete">, never, ExtArgs>
 
     /**
-     * Update one Poster.
-     * @param {PosterUpdateArgs} args - Arguments to update one Poster.
+     * Update one Image.
+     * @param {ImageUpdateArgs} args - Arguments to update one Image.
      * @example
-     * // Update one Poster
-     * const poster = await prisma.poster.update({
+     * // Update one Image
+     * const image = await prisma.image.update({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -3601,30 +3648,30 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends PosterUpdateArgs>(args: SelectSubset<T, PosterUpdateArgs<ExtArgs>>): Prisma__PosterClient<$Result.GetResult<Prisma.$PosterPayload<ExtArgs>, T, "update">, never, ExtArgs>
+    update<T extends ImageUpdateArgs>(args: SelectSubset<T, ImageUpdateArgs<ExtArgs>>): Prisma__ImageClient<$Result.GetResult<Prisma.$ImagePayload<ExtArgs>, T, "update">, never, ExtArgs>
 
     /**
-     * Delete zero or more Posters.
-     * @param {PosterDeleteManyArgs} args - Arguments to filter Posters to delete.
+     * Delete zero or more Images.
+     * @param {ImageDeleteManyArgs} args - Arguments to filter Images to delete.
      * @example
-     * // Delete a few Posters
-     * const { count } = await prisma.poster.deleteMany({
+     * // Delete a few Images
+     * const { count } = await prisma.image.deleteMany({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      * 
      */
-    deleteMany<T extends PosterDeleteManyArgs>(args?: SelectSubset<T, PosterDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends ImageDeleteManyArgs>(args?: SelectSubset<T, ImageDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more Posters.
+     * Update zero or more Images.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {PosterUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {ImageUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
-     * // Update many Posters
-     * const poster = await prisma.poster.updateMany({
+     * // Update many Images
+     * const image = await prisma.image.updateMany({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -3634,56 +3681,56 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends PosterUpdateManyArgs>(args: SelectSubset<T, PosterUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends ImageUpdateManyArgs>(args: SelectSubset<T, ImageUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Create or update one Poster.
-     * @param {PosterUpsertArgs} args - Arguments to update or create a Poster.
+     * Create or update one Image.
+     * @param {ImageUpsertArgs} args - Arguments to update or create a Image.
      * @example
-     * // Update or create a Poster
-     * const poster = await prisma.poster.upsert({
+     * // Update or create a Image
+     * const image = await prisma.image.upsert({
      *   create: {
-     *     // ... data to create a Poster
+     *     // ... data to create a Image
      *   },
      *   update: {
      *     // ... in case it already exists, update
      *   },
      *   where: {
-     *     // ... the filter for the Poster we want to update
+     *     // ... the filter for the Image we want to update
      *   }
      * })
      */
-    upsert<T extends PosterUpsertArgs>(args: SelectSubset<T, PosterUpsertArgs<ExtArgs>>): Prisma__PosterClient<$Result.GetResult<Prisma.$PosterPayload<ExtArgs>, T, "upsert">, never, ExtArgs>
+    upsert<T extends ImageUpsertArgs>(args: SelectSubset<T, ImageUpsertArgs<ExtArgs>>): Prisma__ImageClient<$Result.GetResult<Prisma.$ImagePayload<ExtArgs>, T, "upsert">, never, ExtArgs>
 
 
     /**
-     * Count the number of Posters.
+     * Count the number of Images.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {PosterCountArgs} args - Arguments to filter Posters to count.
+     * @param {ImageCountArgs} args - Arguments to filter Images to count.
      * @example
-     * // Count the number of Posters
-     * const count = await prisma.poster.count({
+     * // Count the number of Images
+     * const count = await prisma.image.count({
      *   where: {
-     *     // ... the filter for the Posters we want to count
+     *     // ... the filter for the Images we want to count
      *   }
      * })
     **/
-    count<T extends PosterCountArgs>(
-      args?: Subset<T, PosterCountArgs>,
+    count<T extends ImageCountArgs>(
+      args?: Subset<T, ImageCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
           ? number
-          : GetScalarType<T['select'], PosterCountAggregateOutputType>
+          : GetScalarType<T['select'], ImageCountAggregateOutputType>
         : number
     >
 
     /**
-     * Allows you to perform aggregations operations on a Poster.
+     * Allows you to perform aggregations operations on a Image.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {PosterAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @param {ImageAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
      * @example
      * // Ordered by age ascending
      * // Where email contains prisma.io
@@ -3703,13 +3750,13 @@ export namespace Prisma {
      *   take: 10,
      * })
     **/
-    aggregate<T extends PosterAggregateArgs>(args: Subset<T, PosterAggregateArgs>): Prisma.PrismaPromise<GetPosterAggregateType<T>>
+    aggregate<T extends ImageAggregateArgs>(args: Subset<T, ImageAggregateArgs>): Prisma.PrismaPromise<GetImageAggregateType<T>>
 
     /**
-     * Group by Poster.
+     * Group by Image.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {PosterGroupByArgs} args - Group by arguments.
+     * @param {ImageGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -3724,14 +3771,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends PosterGroupByArgs,
+      T extends ImageGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: PosterGroupByArgs['orderBy'] }
-        : { orderBy?: PosterGroupByArgs['orderBy'] },
+        ? { orderBy: ImageGroupByArgs['orderBy'] }
+        : { orderBy?: ImageGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -3780,20 +3827,20 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, PosterGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPosterGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, ImageGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetImageGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the Poster model
+   * Fields of the Image model
    */
-  readonly fields: PosterFieldRefs;
+  readonly fields: ImageFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for Poster.
+   * The delegate class that acts as a "Promise-like" for Image.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__PosterClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__ImageClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     event<T extends EventDefaultArgs<ExtArgs> = {}>(args?: Subset<T, EventDefaultArgs<ExtArgs>>): Prisma__EventClient<$Result.GetResult<Prisma.$EventPayload<ExtArgs>, T, "findUniqueOrThrow"> | Null, Null, ExtArgs>
     /**
@@ -3822,343 +3869,344 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the Poster model
+   * Fields of the Image model
    */ 
-  interface PosterFieldRefs {
-    readonly createdAt: FieldRef<"Poster", 'DateTime'>
-    readonly id: FieldRef<"Poster", 'String'>
-    readonly title: FieldRef<"Poster", 'String'>
-    readonly url: FieldRef<"Poster", 'String'>
-    readonly eventId: FieldRef<"Poster", 'Int'>
+  interface ImageFieldRefs {
+    readonly id: FieldRef<"Image", 'String'>
+    readonly createdAt: FieldRef<"Image", 'DateTime'>
+    readonly updatedAt: FieldRef<"Image", 'DateTime'>
+    readonly name: FieldRef<"Image", 'String'>
+    readonly url: FieldRef<"Image", 'String'>
+    readonly eventId: FieldRef<"Image", 'Int'>
   }
     
 
   // Custom InputTypes
   /**
-   * Poster findUnique
+   * Image findUnique
    */
-  export type PosterFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type ImageFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Poster
+     * Select specific fields to fetch from the Image
      */
-    select?: PosterSelect<ExtArgs> | null
+    select?: ImageSelect<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: PosterInclude<ExtArgs> | null
+    include?: ImageInclude<ExtArgs> | null
     /**
-     * Filter, which Poster to fetch.
+     * Filter, which Image to fetch.
      */
-    where: PosterWhereUniqueInput
+    where: ImageWhereUniqueInput
   }
 
   /**
-   * Poster findUniqueOrThrow
+   * Image findUniqueOrThrow
    */
-  export type PosterFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type ImageFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Poster
+     * Select specific fields to fetch from the Image
      */
-    select?: PosterSelect<ExtArgs> | null
+    select?: ImageSelect<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: PosterInclude<ExtArgs> | null
+    include?: ImageInclude<ExtArgs> | null
     /**
-     * Filter, which Poster to fetch.
+     * Filter, which Image to fetch.
      */
-    where: PosterWhereUniqueInput
+    where: ImageWhereUniqueInput
   }
 
   /**
-   * Poster findFirst
+   * Image findFirst
    */
-  export type PosterFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type ImageFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Poster
+     * Select specific fields to fetch from the Image
      */
-    select?: PosterSelect<ExtArgs> | null
+    select?: ImageSelect<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: PosterInclude<ExtArgs> | null
+    include?: ImageInclude<ExtArgs> | null
     /**
-     * Filter, which Poster to fetch.
+     * Filter, which Image to fetch.
      */
-    where?: PosterWhereInput
+    where?: ImageWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Posters to fetch.
+     * Determine the order of Images to fetch.
      */
-    orderBy?: PosterOrderByWithRelationInput | PosterOrderByWithRelationInput[]
+    orderBy?: ImageOrderByWithRelationInput | ImageOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Posters.
+     * Sets the position for searching for Images.
      */
-    cursor?: PosterWhereUniqueInput
+    cursor?: ImageWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Posters from the position of the cursor.
+     * Take `±n` Images from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Posters.
+     * Skip the first `n` Images.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Posters.
+     * Filter by unique combinations of Images.
      */
-    distinct?: PosterScalarFieldEnum | PosterScalarFieldEnum[]
+    distinct?: ImageScalarFieldEnum | ImageScalarFieldEnum[]
   }
 
   /**
-   * Poster findFirstOrThrow
+   * Image findFirstOrThrow
    */
-  export type PosterFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type ImageFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Poster
+     * Select specific fields to fetch from the Image
      */
-    select?: PosterSelect<ExtArgs> | null
+    select?: ImageSelect<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: PosterInclude<ExtArgs> | null
+    include?: ImageInclude<ExtArgs> | null
     /**
-     * Filter, which Poster to fetch.
+     * Filter, which Image to fetch.
      */
-    where?: PosterWhereInput
+    where?: ImageWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Posters to fetch.
+     * Determine the order of Images to fetch.
      */
-    orderBy?: PosterOrderByWithRelationInput | PosterOrderByWithRelationInput[]
+    orderBy?: ImageOrderByWithRelationInput | ImageOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Posters.
+     * Sets the position for searching for Images.
      */
-    cursor?: PosterWhereUniqueInput
+    cursor?: ImageWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Posters from the position of the cursor.
+     * Take `±n` Images from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Posters.
+     * Skip the first `n` Images.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Posters.
+     * Filter by unique combinations of Images.
      */
-    distinct?: PosterScalarFieldEnum | PosterScalarFieldEnum[]
+    distinct?: ImageScalarFieldEnum | ImageScalarFieldEnum[]
   }
 
   /**
-   * Poster findMany
+   * Image findMany
    */
-  export type PosterFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type ImageFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Poster
+     * Select specific fields to fetch from the Image
      */
-    select?: PosterSelect<ExtArgs> | null
+    select?: ImageSelect<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: PosterInclude<ExtArgs> | null
+    include?: ImageInclude<ExtArgs> | null
     /**
-     * Filter, which Posters to fetch.
+     * Filter, which Images to fetch.
      */
-    where?: PosterWhereInput
+    where?: ImageWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Posters to fetch.
+     * Determine the order of Images to fetch.
      */
-    orderBy?: PosterOrderByWithRelationInput | PosterOrderByWithRelationInput[]
+    orderBy?: ImageOrderByWithRelationInput | ImageOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing Posters.
+     * Sets the position for listing Images.
      */
-    cursor?: PosterWhereUniqueInput
+    cursor?: ImageWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Posters from the position of the cursor.
+     * Take `±n` Images from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Posters.
+     * Skip the first `n` Images.
      */
     skip?: number
-    distinct?: PosterScalarFieldEnum | PosterScalarFieldEnum[]
+    distinct?: ImageScalarFieldEnum | ImageScalarFieldEnum[]
   }
 
   /**
-   * Poster create
+   * Image create
    */
-  export type PosterCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type ImageCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Poster
+     * Select specific fields to fetch from the Image
      */
-    select?: PosterSelect<ExtArgs> | null
+    select?: ImageSelect<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: PosterInclude<ExtArgs> | null
+    include?: ImageInclude<ExtArgs> | null
     /**
-     * The data needed to create a Poster.
+     * The data needed to create a Image.
      */
-    data: XOR<PosterCreateInput, PosterUncheckedCreateInput>
+    data: XOR<ImageCreateInput, ImageUncheckedCreateInput>
   }
 
   /**
-   * Poster createMany
+   * Image createMany
    */
-  export type PosterCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type ImageCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many Posters.
+     * The data used to create many Images.
      */
-    data: PosterCreateManyInput | PosterCreateManyInput[]
+    data: ImageCreateManyInput | ImageCreateManyInput[]
     skipDuplicates?: boolean
   }
 
   /**
-   * Poster createManyAndReturn
+   * Image createManyAndReturn
    */
-  export type PosterCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type ImageCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Poster
+     * Select specific fields to fetch from the Image
      */
-    select?: PosterSelectCreateManyAndReturn<ExtArgs> | null
+    select?: ImageSelectCreateManyAndReturn<ExtArgs> | null
     /**
-     * The data used to create many Posters.
+     * The data used to create many Images.
      */
-    data: PosterCreateManyInput | PosterCreateManyInput[]
+    data: ImageCreateManyInput | ImageCreateManyInput[]
     skipDuplicates?: boolean
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: PosterIncludeCreateManyAndReturn<ExtArgs> | null
+    include?: ImageIncludeCreateManyAndReturn<ExtArgs> | null
   }
 
   /**
-   * Poster update
+   * Image update
    */
-  export type PosterUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type ImageUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Poster
+     * Select specific fields to fetch from the Image
      */
-    select?: PosterSelect<ExtArgs> | null
+    select?: ImageSelect<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: PosterInclude<ExtArgs> | null
+    include?: ImageInclude<ExtArgs> | null
     /**
-     * The data needed to update a Poster.
+     * The data needed to update a Image.
      */
-    data: XOR<PosterUpdateInput, PosterUncheckedUpdateInput>
+    data: XOR<ImageUpdateInput, ImageUncheckedUpdateInput>
     /**
-     * Choose, which Poster to update.
+     * Choose, which Image to update.
      */
-    where: PosterWhereUniqueInput
+    where: ImageWhereUniqueInput
   }
 
   /**
-   * Poster updateMany
+   * Image updateMany
    */
-  export type PosterUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type ImageUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update Posters.
+     * The data used to update Images.
      */
-    data: XOR<PosterUpdateManyMutationInput, PosterUncheckedUpdateManyInput>
+    data: XOR<ImageUpdateManyMutationInput, ImageUncheckedUpdateManyInput>
     /**
-     * Filter which Posters to update
+     * Filter which Images to update
      */
-    where?: PosterWhereInput
+    where?: ImageWhereInput
   }
 
   /**
-   * Poster upsert
+   * Image upsert
    */
-  export type PosterUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type ImageUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Poster
+     * Select specific fields to fetch from the Image
      */
-    select?: PosterSelect<ExtArgs> | null
+    select?: ImageSelect<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: PosterInclude<ExtArgs> | null
+    include?: ImageInclude<ExtArgs> | null
     /**
-     * The filter to search for the Poster to update in case it exists.
+     * The filter to search for the Image to update in case it exists.
      */
-    where: PosterWhereUniqueInput
+    where: ImageWhereUniqueInput
     /**
-     * In case the Poster found by the `where` argument doesn't exist, create a new Poster with this data.
+     * In case the Image found by the `where` argument doesn't exist, create a new Image with this data.
      */
-    create: XOR<PosterCreateInput, PosterUncheckedCreateInput>
+    create: XOR<ImageCreateInput, ImageUncheckedCreateInput>
     /**
-     * In case the Poster was found with the provided `where` argument, update it with this data.
+     * In case the Image was found with the provided `where` argument, update it with this data.
      */
-    update: XOR<PosterUpdateInput, PosterUncheckedUpdateInput>
+    update: XOR<ImageUpdateInput, ImageUncheckedUpdateInput>
   }
 
   /**
-   * Poster delete
+   * Image delete
    */
-  export type PosterDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type ImageDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Poster
+     * Select specific fields to fetch from the Image
      */
-    select?: PosterSelect<ExtArgs> | null
+    select?: ImageSelect<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: PosterInclude<ExtArgs> | null
+    include?: ImageInclude<ExtArgs> | null
     /**
-     * Filter which Poster to delete.
+     * Filter which Image to delete.
      */
-    where: PosterWhereUniqueInput
+    where: ImageWhereUniqueInput
   }
 
   /**
-   * Poster deleteMany
+   * Image deleteMany
    */
-  export type PosterDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type ImageDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Posters to delete
+     * Filter which Images to delete
      */
-    where?: PosterWhereInput
+    where?: ImageWhereInput
   }
 
   /**
-   * Poster without action
+   * Image without action
    */
-  export type PosterDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type ImageDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Poster
+     * Select specific fields to fetch from the Image
      */
-    select?: PosterSelect<ExtArgs> | null
+    select?: ImageSelect<ExtArgs> | null
     /**
      * Choose, which related nodes to fetch as well
      */
-    include?: PosterInclude<ExtArgs> | null
+    include?: ImageInclude<ExtArgs> | null
   }
 
 
@@ -4183,24 +4231,24 @@ export namespace Prisma {
   }
 
   export type VenueMinAggregateOutputType = {
-    createdAt: Date | null
     id: number | null
+    createdAt: Date | null
+    updatedAt: Date | null
     name: string | null
-    adress: string | null
   }
 
   export type VenueMaxAggregateOutputType = {
-    createdAt: Date | null
     id: number | null
+    createdAt: Date | null
+    updatedAt: Date | null
     name: string | null
-    adress: string | null
   }
 
   export type VenueCountAggregateOutputType = {
-    createdAt: number
     id: number
+    createdAt: number
+    updatedAt: number
     name: number
-    adress: number
     _all: number
   }
 
@@ -4214,24 +4262,24 @@ export namespace Prisma {
   }
 
   export type VenueMinAggregateInputType = {
-    createdAt?: true
     id?: true
+    createdAt?: true
+    updatedAt?: true
     name?: true
-    adress?: true
   }
 
   export type VenueMaxAggregateInputType = {
-    createdAt?: true
     id?: true
+    createdAt?: true
+    updatedAt?: true
     name?: true
-    adress?: true
   }
 
   export type VenueCountAggregateInputType = {
-    createdAt?: true
     id?: true
+    createdAt?: true
+    updatedAt?: true
     name?: true
-    adress?: true
     _all?: true
   }
 
@@ -4322,10 +4370,10 @@ export namespace Prisma {
   }
 
   export type VenueGroupByOutputType = {
-    createdAt: Date
     id: number
+    createdAt: Date
+    updatedAt: Date
     name: string
-    adress: string
     _count: VenueCountAggregateOutputType | null
     _avg: VenueAvgAggregateOutputType | null
     _sum: VenueSumAggregateOutputType | null
@@ -4348,30 +4396,30 @@ export namespace Prisma {
 
 
   export type VenueSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    createdAt?: boolean
     id?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
     name?: boolean
-    adress?: boolean
-    event?: boolean | Venue$eventArgs<ExtArgs>
+    events?: boolean | Venue$eventsArgs<ExtArgs>
     _count?: boolean | VenueCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["venue"]>
 
   export type VenueSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    createdAt?: boolean
     id?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
     name?: boolean
-    adress?: boolean
   }, ExtArgs["result"]["venue"]>
 
   export type VenueSelectScalar = {
-    createdAt?: boolean
     id?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
     name?: boolean
-    adress?: boolean
   }
 
   export type VenueInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    event?: boolean | Venue$eventArgs<ExtArgs>
+    events?: boolean | Venue$eventsArgs<ExtArgs>
     _count?: boolean | VenueCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type VenueIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
@@ -4379,13 +4427,13 @@ export namespace Prisma {
   export type $VenuePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Venue"
     objects: {
-      event: Prisma.$EventPayload<ExtArgs>[]
+      events: Prisma.$EventPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
-      createdAt: Date
       id: number
+      createdAt: Date
+      updatedAt: Date
       name: string
-      adress: string
     }, ExtArgs["result"]["venue"]>
     composites: {}
   }
@@ -4469,8 +4517,8 @@ export namespace Prisma {
      * // Get first 10 Venues
      * const venues = await prisma.venue.findMany({ take: 10 })
      * 
-     * // Only select the `createdAt`
-     * const venueWithCreatedAtOnly = await prisma.venue.findMany({ select: { createdAt: true } })
+     * // Only select the `id`
+     * const venueWithIdOnly = await prisma.venue.findMany({ select: { id: true } })
      * 
      */
     findMany<T extends VenueFindManyArgs>(args?: SelectSubset<T, VenueFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$VenuePayload<ExtArgs>, T, "findMany">>
@@ -4514,9 +4562,9 @@ export namespace Prisma {
      *   ]
      * })
      * 
-     * // Create many Venues and only return the `createdAt`
-     * const venueWithCreatedAtOnly = await prisma.venue.createManyAndReturn({ 
-     *   select: { createdAt: true },
+     * // Create many Venues and only return the `id`
+     * const venueWithIdOnly = await prisma.venue.createManyAndReturn({ 
+     *   select: { id: true },
      *   data: [
      *     // ... provide data here
      *   ]
@@ -4750,7 +4798,7 @@ export namespace Prisma {
    */
   export interface Prisma__VenueClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    event<T extends Venue$eventArgs<ExtArgs> = {}>(args?: Subset<T, Venue$eventArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$EventPayload<ExtArgs>, T, "findMany"> | Null>
+    events<T extends Venue$eventsArgs<ExtArgs> = {}>(args?: Subset<T, Venue$eventsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$EventPayload<ExtArgs>, T, "findMany"> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -4780,10 +4828,10 @@ export namespace Prisma {
    * Fields of the Venue model
    */ 
   interface VenueFieldRefs {
-    readonly createdAt: FieldRef<"Venue", 'DateTime'>
     readonly id: FieldRef<"Venue", 'Int'>
+    readonly createdAt: FieldRef<"Venue", 'DateTime'>
+    readonly updatedAt: FieldRef<"Venue", 'DateTime'>
     readonly name: FieldRef<"Venue", 'String'>
-    readonly adress: FieldRef<"Venue", 'String'>
   }
     
 
@@ -5098,9 +5146,9 @@ export namespace Prisma {
   }
 
   /**
-   * Venue.event
+   * Venue.events
    */
-  export type Venue$eventArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Venue$eventsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * Select specific fields to fetch from the Event
      */
@@ -5138,46 +5186,70 @@ export namespace Prisma {
 
   export type AggregateCategory = {
     _count: CategoryCountAggregateOutputType | null
+    _avg: CategoryAvgAggregateOutputType | null
+    _sum: CategorySumAggregateOutputType | null
     _min: CategoryMinAggregateOutputType | null
     _max: CategoryMaxAggregateOutputType | null
   }
 
+  export type CategoryAvgAggregateOutputType = {
+    id: number | null
+  }
+
+  export type CategorySumAggregateOutputType = {
+    id: number | null
+  }
+
   export type CategoryMinAggregateOutputType = {
+    id: number | null
     createdAt: Date | null
-    id: string | null
-    title: string | null
+    updatedAt: Date | null
+    name: string | null
   }
 
   export type CategoryMaxAggregateOutputType = {
+    id: number | null
     createdAt: Date | null
-    id: string | null
-    title: string | null
+    updatedAt: Date | null
+    name: string | null
   }
 
   export type CategoryCountAggregateOutputType = {
-    createdAt: number
     id: number
-    title: number
+    createdAt: number
+    updatedAt: number
+    name: number
     _all: number
   }
 
 
-  export type CategoryMinAggregateInputType = {
-    createdAt?: true
+  export type CategoryAvgAggregateInputType = {
     id?: true
-    title?: true
+  }
+
+  export type CategorySumAggregateInputType = {
+    id?: true
+  }
+
+  export type CategoryMinAggregateInputType = {
+    id?: true
+    createdAt?: true
+    updatedAt?: true
+    name?: true
   }
 
   export type CategoryMaxAggregateInputType = {
-    createdAt?: true
     id?: true
-    title?: true
+    createdAt?: true
+    updatedAt?: true
+    name?: true
   }
 
   export type CategoryCountAggregateInputType = {
-    createdAt?: true
     id?: true
-    title?: true
+    createdAt?: true
+    updatedAt?: true
+    name?: true
     _all?: true
   }
 
@@ -5219,6 +5291,18 @@ export namespace Prisma {
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
+     * Select which fields to average
+    **/
+    _avg?: CategoryAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: CategorySumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
      * Select which fields to find the minimum value
     **/
     _min?: CategoryMinAggregateInputType
@@ -5249,15 +5333,20 @@ export namespace Prisma {
     take?: number
     skip?: number
     _count?: CategoryCountAggregateInputType | true
+    _avg?: CategoryAvgAggregateInputType
+    _sum?: CategorySumAggregateInputType
     _min?: CategoryMinAggregateInputType
     _max?: CategoryMaxAggregateInputType
   }
 
   export type CategoryGroupByOutputType = {
+    id: number
     createdAt: Date
-    id: string
-    title: string
+    updatedAt: Date
+    name: string
     _count: CategoryCountAggregateOutputType | null
+    _avg: CategoryAvgAggregateOutputType | null
+    _sum: CategorySumAggregateOutputType | null
     _min: CategoryMinAggregateOutputType | null
     _max: CategoryMaxAggregateOutputType | null
   }
@@ -5277,27 +5366,30 @@ export namespace Prisma {
 
 
   export type CategorySelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    createdAt?: boolean
     id?: boolean
-    title?: boolean
-    event?: boolean | Category$eventArgs<ExtArgs>
+    createdAt?: boolean
+    updatedAt?: boolean
+    name?: boolean
+    events?: boolean | Category$eventsArgs<ExtArgs>
     _count?: boolean | CategoryCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["category"]>
 
   export type CategorySelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
-    createdAt?: boolean
     id?: boolean
-    title?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    name?: boolean
   }, ExtArgs["result"]["category"]>
 
   export type CategorySelectScalar = {
-    createdAt?: boolean
     id?: boolean
-    title?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    name?: boolean
   }
 
   export type CategoryInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    event?: boolean | Category$eventArgs<ExtArgs>
+    events?: boolean | Category$eventsArgs<ExtArgs>
     _count?: boolean | CategoryCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type CategoryIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
@@ -5305,12 +5397,13 @@ export namespace Prisma {
   export type $CategoryPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Category"
     objects: {
-      event: Prisma.$EventPayload<ExtArgs>[]
+      events: Prisma.$EventPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
+      id: number
       createdAt: Date
-      id: string
-      title: string
+      updatedAt: Date
+      name: string
     }, ExtArgs["result"]["category"]>
     composites: {}
   }
@@ -5394,8 +5487,8 @@ export namespace Prisma {
      * // Get first 10 Categories
      * const categories = await prisma.category.findMany({ take: 10 })
      * 
-     * // Only select the `createdAt`
-     * const categoryWithCreatedAtOnly = await prisma.category.findMany({ select: { createdAt: true } })
+     * // Only select the `id`
+     * const categoryWithIdOnly = await prisma.category.findMany({ select: { id: true } })
      * 
      */
     findMany<T extends CategoryFindManyArgs>(args?: SelectSubset<T, CategoryFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CategoryPayload<ExtArgs>, T, "findMany">>
@@ -5439,9 +5532,9 @@ export namespace Prisma {
      *   ]
      * })
      * 
-     * // Create many Categories and only return the `createdAt`
-     * const categoryWithCreatedAtOnly = await prisma.category.createManyAndReturn({ 
-     *   select: { createdAt: true },
+     * // Create many Categories and only return the `id`
+     * const categoryWithIdOnly = await prisma.category.createManyAndReturn({ 
+     *   select: { id: true },
      *   data: [
      *     // ... provide data here
      *   ]
@@ -5675,7 +5768,7 @@ export namespace Prisma {
    */
   export interface Prisma__CategoryClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    event<T extends Category$eventArgs<ExtArgs> = {}>(args?: Subset<T, Category$eventArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$EventPayload<ExtArgs>, T, "findMany"> | Null>
+    events<T extends Category$eventsArgs<ExtArgs> = {}>(args?: Subset<T, Category$eventsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$EventPayload<ExtArgs>, T, "findMany"> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -5705,9 +5798,10 @@ export namespace Prisma {
    * Fields of the Category model
    */ 
   interface CategoryFieldRefs {
+    readonly id: FieldRef<"Category", 'Int'>
     readonly createdAt: FieldRef<"Category", 'DateTime'>
-    readonly id: FieldRef<"Category", 'String'>
-    readonly title: FieldRef<"Category", 'String'>
+    readonly updatedAt: FieldRef<"Category", 'DateTime'>
+    readonly name: FieldRef<"Category", 'String'>
   }
     
 
@@ -6022,9 +6116,9 @@ export namespace Prisma {
   }
 
   /**
-   * Category.event
+   * Category.events
    */
-  export type Category$eventArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type Category$eventsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
      * Select specific fields to fetch from the Event
      */
@@ -6072,53 +6166,58 @@ export namespace Prisma {
 
   export const SignatureScalarFieldEnum: {
     id: 'id',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt',
     name: 'name',
     email: 'email',
-    approved: 'approved',
-    date: 'date'
+    approved: 'approved'
   };
 
   export type SignatureScalarFieldEnum = (typeof SignatureScalarFieldEnum)[keyof typeof SignatureScalarFieldEnum]
 
 
   export const EventScalarFieldEnum: {
-    createdAt: 'createdAt',
     id: 'id',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt',
     name: 'name',
     description: 'description',
     dateStart: 'dateStart',
     dateEnd: 'dateEnd',
+    imageId: 'imageId',
     venueId: 'venueId'
   };
 
   export type EventScalarFieldEnum = (typeof EventScalarFieldEnum)[keyof typeof EventScalarFieldEnum]
 
 
-  export const PosterScalarFieldEnum: {
-    createdAt: 'createdAt',
+  export const ImageScalarFieldEnum: {
     id: 'id',
-    title: 'title',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt',
+    name: 'name',
     url: 'url',
     eventId: 'eventId'
   };
 
-  export type PosterScalarFieldEnum = (typeof PosterScalarFieldEnum)[keyof typeof PosterScalarFieldEnum]
+  export type ImageScalarFieldEnum = (typeof ImageScalarFieldEnum)[keyof typeof ImageScalarFieldEnum]
 
 
   export const VenueScalarFieldEnum: {
-    createdAt: 'createdAt',
     id: 'id',
-    name: 'name',
-    adress: 'adress'
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt',
+    name: 'name'
   };
 
   export type VenueScalarFieldEnum = (typeof VenueScalarFieldEnum)[keyof typeof VenueScalarFieldEnum]
 
 
   export const CategoryScalarFieldEnum: {
-    createdAt: 'createdAt',
     id: 'id',
-    title: 'title'
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt',
+    name: 'name'
   };
 
   export type CategoryScalarFieldEnum = (typeof CategoryScalarFieldEnum)[keyof typeof CategoryScalarFieldEnum]
@@ -6168,13 +6267,6 @@ export namespace Prisma {
 
 
   /**
-   * Reference to a field of type 'Boolean'
-   */
-  export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Boolean'>
-    
-
-
-  /**
    * Reference to a field of type 'DateTime'
    */
   export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime'>
@@ -6185,6 +6277,13 @@ export namespace Prisma {
    * Reference to a field of type 'DateTime[]'
    */
   export type ListDateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime[]'>
+    
+
+
+  /**
+   * Reference to a field of type 'Boolean'
+   */
+  export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Boolean'>
     
 
 
@@ -6224,18 +6323,20 @@ export namespace Prisma {
     OR?: SignatureWhereInput[]
     NOT?: SignatureWhereInput | SignatureWhereInput[]
     id?: StringFilter<"Signature"> | string
+    createdAt?: DateTimeFilter<"Signature"> | Date | string
+    updatedAt?: DateTimeFilter<"Signature"> | Date | string
     name?: StringNullableFilter<"Signature"> | string | null
     email?: StringFilter<"Signature"> | string
     approved?: BoolFilter<"Signature"> | boolean
-    date?: DateTimeFilter<"Signature"> | Date | string
   }
 
   export type SignatureOrderByWithRelationInput = {
     id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
     name?: SortOrderInput | SortOrder
     email?: SortOrder
     approved?: SortOrder
-    date?: SortOrder
   }
 
   export type SignatureWhereUniqueInput = Prisma.AtLeast<{
@@ -6244,17 +6345,19 @@ export namespace Prisma {
     AND?: SignatureWhereInput | SignatureWhereInput[]
     OR?: SignatureWhereInput[]
     NOT?: SignatureWhereInput | SignatureWhereInput[]
+    createdAt?: DateTimeFilter<"Signature"> | Date | string
+    updatedAt?: DateTimeFilter<"Signature"> | Date | string
     name?: StringNullableFilter<"Signature"> | string | null
     approved?: BoolFilter<"Signature"> | boolean
-    date?: DateTimeFilter<"Signature"> | Date | string
   }, "id" | "email">
 
   export type SignatureOrderByWithAggregationInput = {
     id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
     name?: SortOrderInput | SortOrder
     email?: SortOrder
     approved?: SortOrder
-    date?: SortOrder
     _count?: SignatureCountOrderByAggregateInput
     _max?: SignatureMaxOrderByAggregateInput
     _min?: SignatureMinOrderByAggregateInput
@@ -6265,39 +6368,44 @@ export namespace Prisma {
     OR?: SignatureScalarWhereWithAggregatesInput[]
     NOT?: SignatureScalarWhereWithAggregatesInput | SignatureScalarWhereWithAggregatesInput[]
     id?: StringWithAggregatesFilter<"Signature"> | string
+    createdAt?: DateTimeWithAggregatesFilter<"Signature"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"Signature"> | Date | string
     name?: StringNullableWithAggregatesFilter<"Signature"> | string | null
     email?: StringWithAggregatesFilter<"Signature"> | string
     approved?: BoolWithAggregatesFilter<"Signature"> | boolean
-    date?: DateTimeWithAggregatesFilter<"Signature"> | Date | string
   }
 
   export type EventWhereInput = {
     AND?: EventWhereInput | EventWhereInput[]
     OR?: EventWhereInput[]
     NOT?: EventWhereInput | EventWhereInput[]
-    createdAt?: DateTimeFilter<"Event"> | Date | string
     id?: IntFilter<"Event"> | number
+    createdAt?: DateTimeFilter<"Event"> | Date | string
+    updatedAt?: DateTimeFilter<"Event"> | Date | string
     name?: StringFilter<"Event"> | string
     description?: StringNullableFilter<"Event"> | string | null
     dateStart?: DateTimeFilter<"Event"> | Date | string
     dateEnd?: DateTimeNullableFilter<"Event"> | Date | string | null
+    imageId?: StringNullableFilter<"Event"> | string | null
     venueId?: IntFilter<"Event"> | number
-    poster?: XOR<PosterNullableRelationFilter, PosterWhereInput> | null
+    image?: XOR<ImageNullableRelationFilter, ImageWhereInput> | null
     venue?: XOR<VenueRelationFilter, VenueWhereInput>
-    category?: CategoryListRelationFilter
+    categories?: CategoryListRelationFilter
   }
 
   export type EventOrderByWithRelationInput = {
-    createdAt?: SortOrder
     id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
     name?: SortOrder
     description?: SortOrderInput | SortOrder
     dateStart?: SortOrder
     dateEnd?: SortOrderInput | SortOrder
+    imageId?: SortOrderInput | SortOrder
     venueId?: SortOrder
-    poster?: PosterOrderByWithRelationInput
+    image?: ImageOrderByWithRelationInput
     venue?: VenueOrderByWithRelationInput
-    category?: CategoryOrderByRelationAggregateInput
+    categories?: CategoryOrderByRelationAggregateInput
   }
 
   export type EventWhereUniqueInput = Prisma.AtLeast<{
@@ -6306,23 +6414,27 @@ export namespace Prisma {
     OR?: EventWhereInput[]
     NOT?: EventWhereInput | EventWhereInput[]
     createdAt?: DateTimeFilter<"Event"> | Date | string
+    updatedAt?: DateTimeFilter<"Event"> | Date | string
     name?: StringFilter<"Event"> | string
     description?: StringNullableFilter<"Event"> | string | null
     dateStart?: DateTimeFilter<"Event"> | Date | string
     dateEnd?: DateTimeNullableFilter<"Event"> | Date | string | null
+    imageId?: StringNullableFilter<"Event"> | string | null
     venueId?: IntFilter<"Event"> | number
-    poster?: XOR<PosterNullableRelationFilter, PosterWhereInput> | null
+    image?: XOR<ImageNullableRelationFilter, ImageWhereInput> | null
     venue?: XOR<VenueRelationFilter, VenueWhereInput>
-    category?: CategoryListRelationFilter
+    categories?: CategoryListRelationFilter
   }, "id">
 
   export type EventOrderByWithAggregationInput = {
-    createdAt?: SortOrder
     id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
     name?: SortOrder
     description?: SortOrderInput | SortOrder
     dateStart?: SortOrder
     dateEnd?: SortOrderInput | SortOrder
+    imageId?: SortOrderInput | SortOrder
     venueId?: SortOrder
     _count?: EventCountOrderByAggregateInput
     _avg?: EventAvgOrderByAggregateInput
@@ -6335,89 +6447,96 @@ export namespace Prisma {
     AND?: EventScalarWhereWithAggregatesInput | EventScalarWhereWithAggregatesInput[]
     OR?: EventScalarWhereWithAggregatesInput[]
     NOT?: EventScalarWhereWithAggregatesInput | EventScalarWhereWithAggregatesInput[]
-    createdAt?: DateTimeWithAggregatesFilter<"Event"> | Date | string
     id?: IntWithAggregatesFilter<"Event"> | number
+    createdAt?: DateTimeWithAggregatesFilter<"Event"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"Event"> | Date | string
     name?: StringWithAggregatesFilter<"Event"> | string
     description?: StringNullableWithAggregatesFilter<"Event"> | string | null
     dateStart?: DateTimeWithAggregatesFilter<"Event"> | Date | string
     dateEnd?: DateTimeNullableWithAggregatesFilter<"Event"> | Date | string | null
+    imageId?: StringNullableWithAggregatesFilter<"Event"> | string | null
     venueId?: IntWithAggregatesFilter<"Event"> | number
   }
 
-  export type PosterWhereInput = {
-    AND?: PosterWhereInput | PosterWhereInput[]
-    OR?: PosterWhereInput[]
-    NOT?: PosterWhereInput | PosterWhereInput[]
-    createdAt?: DateTimeFilter<"Poster"> | Date | string
-    id?: StringFilter<"Poster"> | string
-    title?: StringFilter<"Poster"> | string
-    url?: StringFilter<"Poster"> | string
-    eventId?: IntFilter<"Poster"> | number
+  export type ImageWhereInput = {
+    AND?: ImageWhereInput | ImageWhereInput[]
+    OR?: ImageWhereInput[]
+    NOT?: ImageWhereInput | ImageWhereInput[]
+    id?: StringFilter<"Image"> | string
+    createdAt?: DateTimeFilter<"Image"> | Date | string
+    updatedAt?: DateTimeFilter<"Image"> | Date | string
+    name?: StringFilter<"Image"> | string
+    url?: StringFilter<"Image"> | string
+    eventId?: IntFilter<"Image"> | number
     event?: XOR<EventRelationFilter, EventWhereInput>
   }
 
-  export type PosterOrderByWithRelationInput = {
-    createdAt?: SortOrder
+  export type ImageOrderByWithRelationInput = {
     id?: SortOrder
-    title?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    name?: SortOrder
     url?: SortOrder
     eventId?: SortOrder
     event?: EventOrderByWithRelationInput
   }
 
-  export type PosterWhereUniqueInput = Prisma.AtLeast<{
+  export type ImageWhereUniqueInput = Prisma.AtLeast<{
     id?: string
     eventId?: number
-    AND?: PosterWhereInput | PosterWhereInput[]
-    OR?: PosterWhereInput[]
-    NOT?: PosterWhereInput | PosterWhereInput[]
-    createdAt?: DateTimeFilter<"Poster"> | Date | string
-    title?: StringFilter<"Poster"> | string
-    url?: StringFilter<"Poster"> | string
+    AND?: ImageWhereInput | ImageWhereInput[]
+    OR?: ImageWhereInput[]
+    NOT?: ImageWhereInput | ImageWhereInput[]
+    createdAt?: DateTimeFilter<"Image"> | Date | string
+    updatedAt?: DateTimeFilter<"Image"> | Date | string
+    name?: StringFilter<"Image"> | string
+    url?: StringFilter<"Image"> | string
     event?: XOR<EventRelationFilter, EventWhereInput>
   }, "id" | "eventId">
 
-  export type PosterOrderByWithAggregationInput = {
-    createdAt?: SortOrder
+  export type ImageOrderByWithAggregationInput = {
     id?: SortOrder
-    title?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    name?: SortOrder
     url?: SortOrder
     eventId?: SortOrder
-    _count?: PosterCountOrderByAggregateInput
-    _avg?: PosterAvgOrderByAggregateInput
-    _max?: PosterMaxOrderByAggregateInput
-    _min?: PosterMinOrderByAggregateInput
-    _sum?: PosterSumOrderByAggregateInput
+    _count?: ImageCountOrderByAggregateInput
+    _avg?: ImageAvgOrderByAggregateInput
+    _max?: ImageMaxOrderByAggregateInput
+    _min?: ImageMinOrderByAggregateInput
+    _sum?: ImageSumOrderByAggregateInput
   }
 
-  export type PosterScalarWhereWithAggregatesInput = {
-    AND?: PosterScalarWhereWithAggregatesInput | PosterScalarWhereWithAggregatesInput[]
-    OR?: PosterScalarWhereWithAggregatesInput[]
-    NOT?: PosterScalarWhereWithAggregatesInput | PosterScalarWhereWithAggregatesInput[]
-    createdAt?: DateTimeWithAggregatesFilter<"Poster"> | Date | string
-    id?: StringWithAggregatesFilter<"Poster"> | string
-    title?: StringWithAggregatesFilter<"Poster"> | string
-    url?: StringWithAggregatesFilter<"Poster"> | string
-    eventId?: IntWithAggregatesFilter<"Poster"> | number
+  export type ImageScalarWhereWithAggregatesInput = {
+    AND?: ImageScalarWhereWithAggregatesInput | ImageScalarWhereWithAggregatesInput[]
+    OR?: ImageScalarWhereWithAggregatesInput[]
+    NOT?: ImageScalarWhereWithAggregatesInput | ImageScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"Image"> | string
+    createdAt?: DateTimeWithAggregatesFilter<"Image"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"Image"> | Date | string
+    name?: StringWithAggregatesFilter<"Image"> | string
+    url?: StringWithAggregatesFilter<"Image"> | string
+    eventId?: IntWithAggregatesFilter<"Image"> | number
   }
 
   export type VenueWhereInput = {
     AND?: VenueWhereInput | VenueWhereInput[]
     OR?: VenueWhereInput[]
     NOT?: VenueWhereInput | VenueWhereInput[]
-    createdAt?: DateTimeFilter<"Venue"> | Date | string
     id?: IntFilter<"Venue"> | number
+    createdAt?: DateTimeFilter<"Venue"> | Date | string
+    updatedAt?: DateTimeFilter<"Venue"> | Date | string
     name?: StringFilter<"Venue"> | string
-    adress?: StringFilter<"Venue"> | string
-    event?: EventListRelationFilter
+    events?: EventListRelationFilter
   }
 
   export type VenueOrderByWithRelationInput = {
-    createdAt?: SortOrder
     id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
     name?: SortOrder
-    adress?: SortOrder
-    event?: EventOrderByRelationAggregateInput
+    events?: EventOrderByRelationAggregateInput
   }
 
   export type VenueWhereUniqueInput = Prisma.AtLeast<{
@@ -6426,16 +6545,16 @@ export namespace Prisma {
     OR?: VenueWhereInput[]
     NOT?: VenueWhereInput | VenueWhereInput[]
     createdAt?: DateTimeFilter<"Venue"> | Date | string
+    updatedAt?: DateTimeFilter<"Venue"> | Date | string
     name?: StringFilter<"Venue"> | string
-    adress?: StringFilter<"Venue"> | string
-    event?: EventListRelationFilter
+    events?: EventListRelationFilter
   }, "id">
 
   export type VenueOrderByWithAggregationInput = {
-    createdAt?: SortOrder
     id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
     name?: SortOrder
-    adress?: SortOrder
     _count?: VenueCountOrderByAggregateInput
     _avg?: VenueAvgOrderByAggregateInput
     _max?: VenueMaxOrderByAggregateInput
@@ -6447,336 +6566,375 @@ export namespace Prisma {
     AND?: VenueScalarWhereWithAggregatesInput | VenueScalarWhereWithAggregatesInput[]
     OR?: VenueScalarWhereWithAggregatesInput[]
     NOT?: VenueScalarWhereWithAggregatesInput | VenueScalarWhereWithAggregatesInput[]
-    createdAt?: DateTimeWithAggregatesFilter<"Venue"> | Date | string
     id?: IntWithAggregatesFilter<"Venue"> | number
+    createdAt?: DateTimeWithAggregatesFilter<"Venue"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"Venue"> | Date | string
     name?: StringWithAggregatesFilter<"Venue"> | string
-    adress?: StringWithAggregatesFilter<"Venue"> | string
   }
 
   export type CategoryWhereInput = {
     AND?: CategoryWhereInput | CategoryWhereInput[]
     OR?: CategoryWhereInput[]
     NOT?: CategoryWhereInput | CategoryWhereInput[]
+    id?: IntFilter<"Category"> | number
     createdAt?: DateTimeFilter<"Category"> | Date | string
-    id?: StringFilter<"Category"> | string
-    title?: StringFilter<"Category"> | string
-    event?: EventListRelationFilter
+    updatedAt?: DateTimeFilter<"Category"> | Date | string
+    name?: StringFilter<"Category"> | string
+    events?: EventListRelationFilter
   }
 
   export type CategoryOrderByWithRelationInput = {
-    createdAt?: SortOrder
     id?: SortOrder
-    title?: SortOrder
-    event?: EventOrderByRelationAggregateInput
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    name?: SortOrder
+    events?: EventOrderByRelationAggregateInput
   }
 
   export type CategoryWhereUniqueInput = Prisma.AtLeast<{
-    id?: string
+    id?: number
     AND?: CategoryWhereInput | CategoryWhereInput[]
     OR?: CategoryWhereInput[]
     NOT?: CategoryWhereInput | CategoryWhereInput[]
     createdAt?: DateTimeFilter<"Category"> | Date | string
-    title?: StringFilter<"Category"> | string
-    event?: EventListRelationFilter
+    updatedAt?: DateTimeFilter<"Category"> | Date | string
+    name?: StringFilter<"Category"> | string
+    events?: EventListRelationFilter
   }, "id">
 
   export type CategoryOrderByWithAggregationInput = {
-    createdAt?: SortOrder
     id?: SortOrder
-    title?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    name?: SortOrder
     _count?: CategoryCountOrderByAggregateInput
+    _avg?: CategoryAvgOrderByAggregateInput
     _max?: CategoryMaxOrderByAggregateInput
     _min?: CategoryMinOrderByAggregateInput
+    _sum?: CategorySumOrderByAggregateInput
   }
 
   export type CategoryScalarWhereWithAggregatesInput = {
     AND?: CategoryScalarWhereWithAggregatesInput | CategoryScalarWhereWithAggregatesInput[]
     OR?: CategoryScalarWhereWithAggregatesInput[]
     NOT?: CategoryScalarWhereWithAggregatesInput | CategoryScalarWhereWithAggregatesInput[]
+    id?: IntWithAggregatesFilter<"Category"> | number
     createdAt?: DateTimeWithAggregatesFilter<"Category"> | Date | string
-    id?: StringWithAggregatesFilter<"Category"> | string
-    title?: StringWithAggregatesFilter<"Category"> | string
+    updatedAt?: DateTimeWithAggregatesFilter<"Category"> | Date | string
+    name?: StringWithAggregatesFilter<"Category"> | string
   }
 
   export type SignatureCreateInput = {
     id?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
     name?: string | null
     email: string
     approved?: boolean
-    date?: Date | string
   }
 
   export type SignatureUncheckedCreateInput = {
     id?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
     name?: string | null
     email: string
     approved?: boolean
-    date?: Date | string
   }
 
   export type SignatureUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     name?: NullableStringFieldUpdateOperationsInput | string | null
     email?: StringFieldUpdateOperationsInput | string
     approved?: BoolFieldUpdateOperationsInput | boolean
-    date?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type SignatureUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     name?: NullableStringFieldUpdateOperationsInput | string | null
     email?: StringFieldUpdateOperationsInput | string
     approved?: BoolFieldUpdateOperationsInput | boolean
-    date?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type SignatureCreateManyInput = {
     id?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
     name?: string | null
     email: string
     approved?: boolean
-    date?: Date | string
   }
 
   export type SignatureUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     name?: NullableStringFieldUpdateOperationsInput | string | null
     email?: StringFieldUpdateOperationsInput | string
     approved?: BoolFieldUpdateOperationsInput | boolean
-    date?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type SignatureUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     name?: NullableStringFieldUpdateOperationsInput | string | null
     email?: StringFieldUpdateOperationsInput | string
     approved?: BoolFieldUpdateOperationsInput | boolean
-    date?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type EventCreateInput = {
     createdAt?: Date | string
+    updatedAt?: Date | string
     name: string
     description?: string | null
     dateStart: Date | string
     dateEnd?: Date | string | null
-    poster?: PosterCreateNestedOneWithoutEventInput
-    venue: VenueCreateNestedOneWithoutEventInput
-    category?: CategoryCreateNestedManyWithoutEventInput
+    imageId?: string | null
+    image?: ImageCreateNestedOneWithoutEventInput
+    venue: VenueCreateNestedOneWithoutEventsInput
+    categories?: CategoryCreateNestedManyWithoutEventsInput
   }
 
   export type EventUncheckedCreateInput = {
-    createdAt?: Date | string
     id?: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
     name: string
     description?: string | null
     dateStart: Date | string
     dateEnd?: Date | string | null
+    imageId?: string | null
     venueId: number
-    poster?: PosterUncheckedCreateNestedOneWithoutEventInput
-    category?: CategoryUncheckedCreateNestedManyWithoutEventInput
+    image?: ImageUncheckedCreateNestedOneWithoutEventInput
+    categories?: CategoryUncheckedCreateNestedManyWithoutEventsInput
   }
 
   export type EventUpdateInput = {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     name?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
     dateStart?: DateTimeFieldUpdateOperationsInput | Date | string
     dateEnd?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    poster?: PosterUpdateOneWithoutEventNestedInput
-    venue?: VenueUpdateOneRequiredWithoutEventNestedInput
-    category?: CategoryUpdateManyWithoutEventNestedInput
+    imageId?: NullableStringFieldUpdateOperationsInput | string | null
+    image?: ImageUpdateOneWithoutEventNestedInput
+    venue?: VenueUpdateOneRequiredWithoutEventsNestedInput
+    categories?: CategoryUpdateManyWithoutEventsNestedInput
   }
 
   export type EventUncheckedUpdateInput = {
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     id?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     name?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
     dateStart?: DateTimeFieldUpdateOperationsInput | Date | string
     dateEnd?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    imageId?: NullableStringFieldUpdateOperationsInput | string | null
     venueId?: IntFieldUpdateOperationsInput | number
-    poster?: PosterUncheckedUpdateOneWithoutEventNestedInput
-    category?: CategoryUncheckedUpdateManyWithoutEventNestedInput
+    image?: ImageUncheckedUpdateOneWithoutEventNestedInput
+    categories?: CategoryUncheckedUpdateManyWithoutEventsNestedInput
   }
 
   export type EventCreateManyInput = {
-    createdAt?: Date | string
     id?: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
     name: string
     description?: string | null
     dateStart: Date | string
     dateEnd?: Date | string | null
+    imageId?: string | null
     venueId: number
   }
 
   export type EventUpdateManyMutationInput = {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     name?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
     dateStart?: DateTimeFieldUpdateOperationsInput | Date | string
     dateEnd?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    imageId?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
   export type EventUncheckedUpdateManyInput = {
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     id?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     name?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
     dateStart?: DateTimeFieldUpdateOperationsInput | Date | string
     dateEnd?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    imageId?: NullableStringFieldUpdateOperationsInput | string | null
     venueId?: IntFieldUpdateOperationsInput | number
   }
 
-  export type PosterCreateInput = {
-    createdAt?: Date | string
+  export type ImageCreateInput = {
     id?: string
-    title: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    name: string
     url: string
-    event: EventCreateNestedOneWithoutPosterInput
+    event: EventCreateNestedOneWithoutImageInput
   }
 
-  export type PosterUncheckedCreateInput = {
-    createdAt?: Date | string
+  export type ImageUncheckedCreateInput = {
     id?: string
-    title: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    name: string
     url: string
     eventId: number
   }
 
-  export type PosterUpdateInput = {
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  export type ImageUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
-    title?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    name?: StringFieldUpdateOperationsInput | string
     url?: StringFieldUpdateOperationsInput | string
-    event?: EventUpdateOneRequiredWithoutPosterNestedInput
+    event?: EventUpdateOneRequiredWithoutImageNestedInput
   }
 
-  export type PosterUncheckedUpdateInput = {
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  export type ImageUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
-    title?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    name?: StringFieldUpdateOperationsInput | string
     url?: StringFieldUpdateOperationsInput | string
     eventId?: IntFieldUpdateOperationsInput | number
   }
 
-  export type PosterCreateManyInput = {
-    createdAt?: Date | string
+  export type ImageCreateManyInput = {
     id?: string
-    title: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    name: string
     url: string
     eventId: number
   }
 
-  export type PosterUpdateManyMutationInput = {
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  export type ImageUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
-    title?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    name?: StringFieldUpdateOperationsInput | string
     url?: StringFieldUpdateOperationsInput | string
   }
 
-  export type PosterUncheckedUpdateManyInput = {
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  export type ImageUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
-    title?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    name?: StringFieldUpdateOperationsInput | string
     url?: StringFieldUpdateOperationsInput | string
     eventId?: IntFieldUpdateOperationsInput | number
   }
 
   export type VenueCreateInput = {
     createdAt?: Date | string
+    updatedAt?: Date | string
     name: string
-    adress: string
-    event?: EventCreateNestedManyWithoutVenueInput
+    events?: EventCreateNestedManyWithoutVenueInput
   }
 
   export type VenueUncheckedCreateInput = {
-    createdAt?: Date | string
     id?: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
     name: string
-    adress: string
-    event?: EventUncheckedCreateNestedManyWithoutVenueInput
+    events?: EventUncheckedCreateNestedManyWithoutVenueInput
   }
 
   export type VenueUpdateInput = {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     name?: StringFieldUpdateOperationsInput | string
-    adress?: StringFieldUpdateOperationsInput | string
-    event?: EventUpdateManyWithoutVenueNestedInput
+    events?: EventUpdateManyWithoutVenueNestedInput
   }
 
   export type VenueUncheckedUpdateInput = {
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     id?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     name?: StringFieldUpdateOperationsInput | string
-    adress?: StringFieldUpdateOperationsInput | string
-    event?: EventUncheckedUpdateManyWithoutVenueNestedInput
+    events?: EventUncheckedUpdateManyWithoutVenueNestedInput
   }
 
   export type VenueCreateManyInput = {
-    createdAt?: Date | string
     id?: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
     name: string
-    adress: string
   }
 
   export type VenueUpdateManyMutationInput = {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     name?: StringFieldUpdateOperationsInput | string
-    adress?: StringFieldUpdateOperationsInput | string
   }
 
   export type VenueUncheckedUpdateManyInput = {
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     id?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     name?: StringFieldUpdateOperationsInput | string
-    adress?: StringFieldUpdateOperationsInput | string
   }
 
   export type CategoryCreateInput = {
     createdAt?: Date | string
-    id?: string
-    title: string
-    event?: EventCreateNestedManyWithoutCategoryInput
+    updatedAt?: Date | string
+    name: string
+    events?: EventCreateNestedManyWithoutCategoriesInput
   }
 
   export type CategoryUncheckedCreateInput = {
+    id?: number
     createdAt?: Date | string
-    id?: string
-    title: string
-    event?: EventUncheckedCreateNestedManyWithoutCategoryInput
+    updatedAt?: Date | string
+    name: string
+    events?: EventUncheckedCreateNestedManyWithoutCategoriesInput
   }
 
   export type CategoryUpdateInput = {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    id?: StringFieldUpdateOperationsInput | string
-    title?: StringFieldUpdateOperationsInput | string
-    event?: EventUpdateManyWithoutCategoryNestedInput
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    name?: StringFieldUpdateOperationsInput | string
+    events?: EventUpdateManyWithoutCategoriesNestedInput
   }
 
   export type CategoryUncheckedUpdateInput = {
+    id?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    id?: StringFieldUpdateOperationsInput | string
-    title?: StringFieldUpdateOperationsInput | string
-    event?: EventUncheckedUpdateManyWithoutCategoryNestedInput
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    name?: StringFieldUpdateOperationsInput | string
+    events?: EventUncheckedUpdateManyWithoutCategoriesNestedInput
   }
 
   export type CategoryCreateManyInput = {
+    id?: number
     createdAt?: Date | string
-    id?: string
-    title: string
+    updatedAt?: Date | string
+    name: string
   }
 
   export type CategoryUpdateManyMutationInput = {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    id?: StringFieldUpdateOperationsInput | string
-    title?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    name?: StringFieldUpdateOperationsInput | string
   }
 
   export type CategoryUncheckedUpdateManyInput = {
+    id?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    id?: StringFieldUpdateOperationsInput | string
-    title?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    name?: StringFieldUpdateOperationsInput | string
   }
 
   export type StringFilter<$PrismaModel = never> = {
@@ -6792,6 +6950,17 @@ export namespace Prisma {
     endsWith?: string | StringFieldRefInput<$PrismaModel>
     mode?: QueryMode
     not?: NestedStringFilter<$PrismaModel> | string
+  }
+
+  export type DateTimeFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
   }
 
   export type StringNullableFilter<$PrismaModel = never> = {
@@ -6814,17 +6983,6 @@ export namespace Prisma {
     not?: NestedBoolFilter<$PrismaModel> | boolean
   }
 
-  export type DateTimeFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
-  }
-
   export type SortOrderInput = {
     sort: SortOrder
     nulls?: NullsOrder
@@ -6832,26 +6990,29 @@ export namespace Prisma {
 
   export type SignatureCountOrderByAggregateInput = {
     id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
     name?: SortOrder
     email?: SortOrder
     approved?: SortOrder
-    date?: SortOrder
   }
 
   export type SignatureMaxOrderByAggregateInput = {
     id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
     name?: SortOrder
     email?: SortOrder
     approved?: SortOrder
-    date?: SortOrder
   }
 
   export type SignatureMinOrderByAggregateInput = {
     id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
     name?: SortOrder
     email?: SortOrder
     approved?: SortOrder
-    date?: SortOrder
   }
 
   export type StringWithAggregatesFilter<$PrismaModel = never> = {
@@ -6870,6 +7031,20 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedStringFilter<$PrismaModel>
     _max?: NestedStringFilter<$PrismaModel>
+  }
+
+  export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedDateTimeFilter<$PrismaModel>
+    _max?: NestedDateTimeFilter<$PrismaModel>
   }
 
   export type StringNullableWithAggregatesFilter<$PrismaModel = never> = {
@@ -6898,20 +7073,6 @@ export namespace Prisma {
     _max?: NestedBoolFilter<$PrismaModel>
   }
 
-  export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedDateTimeFilter<$PrismaModel>
-    _max?: NestedDateTimeFilter<$PrismaModel>
-  }
-
   export type IntFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel>
     in?: number[] | ListIntFieldRefInput<$PrismaModel>
@@ -6934,9 +7095,9 @@ export namespace Prisma {
     not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
   }
 
-  export type PosterNullableRelationFilter = {
-    is?: PosterWhereInput | null
-    isNot?: PosterWhereInput | null
+  export type ImageNullableRelationFilter = {
+    is?: ImageWhereInput | null
+    isNot?: ImageWhereInput | null
   }
 
   export type VenueRelationFilter = {
@@ -6955,12 +7116,14 @@ export namespace Prisma {
   }
 
   export type EventCountOrderByAggregateInput = {
-    createdAt?: SortOrder
     id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
     name?: SortOrder
     description?: SortOrder
     dateStart?: SortOrder
     dateEnd?: SortOrder
+    imageId?: SortOrder
     venueId?: SortOrder
   }
 
@@ -6970,22 +7133,26 @@ export namespace Prisma {
   }
 
   export type EventMaxOrderByAggregateInput = {
-    createdAt?: SortOrder
     id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
     name?: SortOrder
     description?: SortOrder
     dateStart?: SortOrder
     dateEnd?: SortOrder
+    imageId?: SortOrder
     venueId?: SortOrder
   }
 
   export type EventMinOrderByAggregateInput = {
-    createdAt?: SortOrder
     id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
     name?: SortOrder
     description?: SortOrder
     dateStart?: SortOrder
     dateEnd?: SortOrder
+    imageId?: SortOrder
     venueId?: SortOrder
   }
 
@@ -7029,35 +7196,38 @@ export namespace Prisma {
     isNot?: EventWhereInput
   }
 
-  export type PosterCountOrderByAggregateInput = {
-    createdAt?: SortOrder
+  export type ImageCountOrderByAggregateInput = {
     id?: SortOrder
-    title?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    name?: SortOrder
     url?: SortOrder
     eventId?: SortOrder
   }
 
-  export type PosterAvgOrderByAggregateInput = {
+  export type ImageAvgOrderByAggregateInput = {
     eventId?: SortOrder
   }
 
-  export type PosterMaxOrderByAggregateInput = {
-    createdAt?: SortOrder
+  export type ImageMaxOrderByAggregateInput = {
     id?: SortOrder
-    title?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    name?: SortOrder
     url?: SortOrder
     eventId?: SortOrder
   }
 
-  export type PosterMinOrderByAggregateInput = {
-    createdAt?: SortOrder
+  export type ImageMinOrderByAggregateInput = {
     id?: SortOrder
-    title?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    name?: SortOrder
     url?: SortOrder
     eventId?: SortOrder
   }
 
-  export type PosterSumOrderByAggregateInput = {
+  export type ImageSumOrderByAggregateInput = {
     eventId?: SortOrder
   }
 
@@ -7072,10 +7242,10 @@ export namespace Prisma {
   }
 
   export type VenueCountOrderByAggregateInput = {
-    createdAt?: SortOrder
     id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
     name?: SortOrder
-    adress?: SortOrder
   }
 
   export type VenueAvgOrderByAggregateInput = {
@@ -7083,17 +7253,17 @@ export namespace Prisma {
   }
 
   export type VenueMaxOrderByAggregateInput = {
-    createdAt?: SortOrder
     id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
     name?: SortOrder
-    adress?: SortOrder
   }
 
   export type VenueMinOrderByAggregateInput = {
-    createdAt?: SortOrder
     id?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
     name?: SortOrder
-    adress?: SortOrder
   }
 
   export type VenueSumOrderByAggregateInput = {
@@ -7101,25 +7271,40 @@ export namespace Prisma {
   }
 
   export type CategoryCountOrderByAggregateInput = {
-    createdAt?: SortOrder
     id?: SortOrder
-    title?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    name?: SortOrder
+  }
+
+  export type CategoryAvgOrderByAggregateInput = {
+    id?: SortOrder
   }
 
   export type CategoryMaxOrderByAggregateInput = {
-    createdAt?: SortOrder
     id?: SortOrder
-    title?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    name?: SortOrder
   }
 
   export type CategoryMinOrderByAggregateInput = {
-    createdAt?: SortOrder
     id?: SortOrder
-    title?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    name?: SortOrder
+  }
+
+  export type CategorySumOrderByAggregateInput = {
+    id?: SortOrder
   }
 
   export type StringFieldUpdateOperationsInput = {
     set?: string
+  }
+
+  export type DateTimeFieldUpdateOperationsInput = {
+    set?: Date | string
   }
 
   export type NullableStringFieldUpdateOperationsInput = {
@@ -7130,37 +7315,33 @@ export namespace Prisma {
     set?: boolean
   }
 
-  export type DateTimeFieldUpdateOperationsInput = {
-    set?: Date | string
+  export type ImageCreateNestedOneWithoutEventInput = {
+    create?: XOR<ImageCreateWithoutEventInput, ImageUncheckedCreateWithoutEventInput>
+    connectOrCreate?: ImageCreateOrConnectWithoutEventInput
+    connect?: ImageWhereUniqueInput
   }
 
-  export type PosterCreateNestedOneWithoutEventInput = {
-    create?: XOR<PosterCreateWithoutEventInput, PosterUncheckedCreateWithoutEventInput>
-    connectOrCreate?: PosterCreateOrConnectWithoutEventInput
-    connect?: PosterWhereUniqueInput
-  }
-
-  export type VenueCreateNestedOneWithoutEventInput = {
-    create?: XOR<VenueCreateWithoutEventInput, VenueUncheckedCreateWithoutEventInput>
-    connectOrCreate?: VenueCreateOrConnectWithoutEventInput
+  export type VenueCreateNestedOneWithoutEventsInput = {
+    create?: XOR<VenueCreateWithoutEventsInput, VenueUncheckedCreateWithoutEventsInput>
+    connectOrCreate?: VenueCreateOrConnectWithoutEventsInput
     connect?: VenueWhereUniqueInput
   }
 
-  export type CategoryCreateNestedManyWithoutEventInput = {
-    create?: XOR<CategoryCreateWithoutEventInput, CategoryUncheckedCreateWithoutEventInput> | CategoryCreateWithoutEventInput[] | CategoryUncheckedCreateWithoutEventInput[]
-    connectOrCreate?: CategoryCreateOrConnectWithoutEventInput | CategoryCreateOrConnectWithoutEventInput[]
+  export type CategoryCreateNestedManyWithoutEventsInput = {
+    create?: XOR<CategoryCreateWithoutEventsInput, CategoryUncheckedCreateWithoutEventsInput> | CategoryCreateWithoutEventsInput[] | CategoryUncheckedCreateWithoutEventsInput[]
+    connectOrCreate?: CategoryCreateOrConnectWithoutEventsInput | CategoryCreateOrConnectWithoutEventsInput[]
     connect?: CategoryWhereUniqueInput | CategoryWhereUniqueInput[]
   }
 
-  export type PosterUncheckedCreateNestedOneWithoutEventInput = {
-    create?: XOR<PosterCreateWithoutEventInput, PosterUncheckedCreateWithoutEventInput>
-    connectOrCreate?: PosterCreateOrConnectWithoutEventInput
-    connect?: PosterWhereUniqueInput
+  export type ImageUncheckedCreateNestedOneWithoutEventInput = {
+    create?: XOR<ImageCreateWithoutEventInput, ImageUncheckedCreateWithoutEventInput>
+    connectOrCreate?: ImageCreateOrConnectWithoutEventInput
+    connect?: ImageWhereUniqueInput
   }
 
-  export type CategoryUncheckedCreateNestedManyWithoutEventInput = {
-    create?: XOR<CategoryCreateWithoutEventInput, CategoryUncheckedCreateWithoutEventInput> | CategoryCreateWithoutEventInput[] | CategoryUncheckedCreateWithoutEventInput[]
-    connectOrCreate?: CategoryCreateOrConnectWithoutEventInput | CategoryCreateOrConnectWithoutEventInput[]
+  export type CategoryUncheckedCreateNestedManyWithoutEventsInput = {
+    create?: XOR<CategoryCreateWithoutEventsInput, CategoryUncheckedCreateWithoutEventsInput> | CategoryCreateWithoutEventsInput[] | CategoryUncheckedCreateWithoutEventsInput[]
+    connectOrCreate?: CategoryCreateOrConnectWithoutEventsInput | CategoryCreateOrConnectWithoutEventsInput[]
     connect?: CategoryWhereUniqueInput | CategoryWhereUniqueInput[]
   }
 
@@ -7168,34 +7349,34 @@ export namespace Prisma {
     set?: Date | string | null
   }
 
-  export type PosterUpdateOneWithoutEventNestedInput = {
-    create?: XOR<PosterCreateWithoutEventInput, PosterUncheckedCreateWithoutEventInput>
-    connectOrCreate?: PosterCreateOrConnectWithoutEventInput
-    upsert?: PosterUpsertWithoutEventInput
-    disconnect?: PosterWhereInput | boolean
-    delete?: PosterWhereInput | boolean
-    connect?: PosterWhereUniqueInput
-    update?: XOR<XOR<PosterUpdateToOneWithWhereWithoutEventInput, PosterUpdateWithoutEventInput>, PosterUncheckedUpdateWithoutEventInput>
+  export type ImageUpdateOneWithoutEventNestedInput = {
+    create?: XOR<ImageCreateWithoutEventInput, ImageUncheckedCreateWithoutEventInput>
+    connectOrCreate?: ImageCreateOrConnectWithoutEventInput
+    upsert?: ImageUpsertWithoutEventInput
+    disconnect?: ImageWhereInput | boolean
+    delete?: ImageWhereInput | boolean
+    connect?: ImageWhereUniqueInput
+    update?: XOR<XOR<ImageUpdateToOneWithWhereWithoutEventInput, ImageUpdateWithoutEventInput>, ImageUncheckedUpdateWithoutEventInput>
   }
 
-  export type VenueUpdateOneRequiredWithoutEventNestedInput = {
-    create?: XOR<VenueCreateWithoutEventInput, VenueUncheckedCreateWithoutEventInput>
-    connectOrCreate?: VenueCreateOrConnectWithoutEventInput
-    upsert?: VenueUpsertWithoutEventInput
+  export type VenueUpdateOneRequiredWithoutEventsNestedInput = {
+    create?: XOR<VenueCreateWithoutEventsInput, VenueUncheckedCreateWithoutEventsInput>
+    connectOrCreate?: VenueCreateOrConnectWithoutEventsInput
+    upsert?: VenueUpsertWithoutEventsInput
     connect?: VenueWhereUniqueInput
-    update?: XOR<XOR<VenueUpdateToOneWithWhereWithoutEventInput, VenueUpdateWithoutEventInput>, VenueUncheckedUpdateWithoutEventInput>
+    update?: XOR<XOR<VenueUpdateToOneWithWhereWithoutEventsInput, VenueUpdateWithoutEventsInput>, VenueUncheckedUpdateWithoutEventsInput>
   }
 
-  export type CategoryUpdateManyWithoutEventNestedInput = {
-    create?: XOR<CategoryCreateWithoutEventInput, CategoryUncheckedCreateWithoutEventInput> | CategoryCreateWithoutEventInput[] | CategoryUncheckedCreateWithoutEventInput[]
-    connectOrCreate?: CategoryCreateOrConnectWithoutEventInput | CategoryCreateOrConnectWithoutEventInput[]
-    upsert?: CategoryUpsertWithWhereUniqueWithoutEventInput | CategoryUpsertWithWhereUniqueWithoutEventInput[]
+  export type CategoryUpdateManyWithoutEventsNestedInput = {
+    create?: XOR<CategoryCreateWithoutEventsInput, CategoryUncheckedCreateWithoutEventsInput> | CategoryCreateWithoutEventsInput[] | CategoryUncheckedCreateWithoutEventsInput[]
+    connectOrCreate?: CategoryCreateOrConnectWithoutEventsInput | CategoryCreateOrConnectWithoutEventsInput[]
+    upsert?: CategoryUpsertWithWhereUniqueWithoutEventsInput | CategoryUpsertWithWhereUniqueWithoutEventsInput[]
     set?: CategoryWhereUniqueInput | CategoryWhereUniqueInput[]
     disconnect?: CategoryWhereUniqueInput | CategoryWhereUniqueInput[]
     delete?: CategoryWhereUniqueInput | CategoryWhereUniqueInput[]
     connect?: CategoryWhereUniqueInput | CategoryWhereUniqueInput[]
-    update?: CategoryUpdateWithWhereUniqueWithoutEventInput | CategoryUpdateWithWhereUniqueWithoutEventInput[]
-    updateMany?: CategoryUpdateManyWithWhereWithoutEventInput | CategoryUpdateManyWithWhereWithoutEventInput[]
+    update?: CategoryUpdateWithWhereUniqueWithoutEventsInput | CategoryUpdateWithWhereUniqueWithoutEventsInput[]
+    updateMany?: CategoryUpdateManyWithWhereWithoutEventsInput | CategoryUpdateManyWithWhereWithoutEventsInput[]
     deleteMany?: CategoryScalarWhereInput | CategoryScalarWhereInput[]
   }
 
@@ -7207,41 +7388,41 @@ export namespace Prisma {
     divide?: number
   }
 
-  export type PosterUncheckedUpdateOneWithoutEventNestedInput = {
-    create?: XOR<PosterCreateWithoutEventInput, PosterUncheckedCreateWithoutEventInput>
-    connectOrCreate?: PosterCreateOrConnectWithoutEventInput
-    upsert?: PosterUpsertWithoutEventInput
-    disconnect?: PosterWhereInput | boolean
-    delete?: PosterWhereInput | boolean
-    connect?: PosterWhereUniqueInput
-    update?: XOR<XOR<PosterUpdateToOneWithWhereWithoutEventInput, PosterUpdateWithoutEventInput>, PosterUncheckedUpdateWithoutEventInput>
+  export type ImageUncheckedUpdateOneWithoutEventNestedInput = {
+    create?: XOR<ImageCreateWithoutEventInput, ImageUncheckedCreateWithoutEventInput>
+    connectOrCreate?: ImageCreateOrConnectWithoutEventInput
+    upsert?: ImageUpsertWithoutEventInput
+    disconnect?: ImageWhereInput | boolean
+    delete?: ImageWhereInput | boolean
+    connect?: ImageWhereUniqueInput
+    update?: XOR<XOR<ImageUpdateToOneWithWhereWithoutEventInput, ImageUpdateWithoutEventInput>, ImageUncheckedUpdateWithoutEventInput>
   }
 
-  export type CategoryUncheckedUpdateManyWithoutEventNestedInput = {
-    create?: XOR<CategoryCreateWithoutEventInput, CategoryUncheckedCreateWithoutEventInput> | CategoryCreateWithoutEventInput[] | CategoryUncheckedCreateWithoutEventInput[]
-    connectOrCreate?: CategoryCreateOrConnectWithoutEventInput | CategoryCreateOrConnectWithoutEventInput[]
-    upsert?: CategoryUpsertWithWhereUniqueWithoutEventInput | CategoryUpsertWithWhereUniqueWithoutEventInput[]
+  export type CategoryUncheckedUpdateManyWithoutEventsNestedInput = {
+    create?: XOR<CategoryCreateWithoutEventsInput, CategoryUncheckedCreateWithoutEventsInput> | CategoryCreateWithoutEventsInput[] | CategoryUncheckedCreateWithoutEventsInput[]
+    connectOrCreate?: CategoryCreateOrConnectWithoutEventsInput | CategoryCreateOrConnectWithoutEventsInput[]
+    upsert?: CategoryUpsertWithWhereUniqueWithoutEventsInput | CategoryUpsertWithWhereUniqueWithoutEventsInput[]
     set?: CategoryWhereUniqueInput | CategoryWhereUniqueInput[]
     disconnect?: CategoryWhereUniqueInput | CategoryWhereUniqueInput[]
     delete?: CategoryWhereUniqueInput | CategoryWhereUniqueInput[]
     connect?: CategoryWhereUniqueInput | CategoryWhereUniqueInput[]
-    update?: CategoryUpdateWithWhereUniqueWithoutEventInput | CategoryUpdateWithWhereUniqueWithoutEventInput[]
-    updateMany?: CategoryUpdateManyWithWhereWithoutEventInput | CategoryUpdateManyWithWhereWithoutEventInput[]
+    update?: CategoryUpdateWithWhereUniqueWithoutEventsInput | CategoryUpdateWithWhereUniqueWithoutEventsInput[]
+    updateMany?: CategoryUpdateManyWithWhereWithoutEventsInput | CategoryUpdateManyWithWhereWithoutEventsInput[]
     deleteMany?: CategoryScalarWhereInput | CategoryScalarWhereInput[]
   }
 
-  export type EventCreateNestedOneWithoutPosterInput = {
-    create?: XOR<EventCreateWithoutPosterInput, EventUncheckedCreateWithoutPosterInput>
-    connectOrCreate?: EventCreateOrConnectWithoutPosterInput
+  export type EventCreateNestedOneWithoutImageInput = {
+    create?: XOR<EventCreateWithoutImageInput, EventUncheckedCreateWithoutImageInput>
+    connectOrCreate?: EventCreateOrConnectWithoutImageInput
     connect?: EventWhereUniqueInput
   }
 
-  export type EventUpdateOneRequiredWithoutPosterNestedInput = {
-    create?: XOR<EventCreateWithoutPosterInput, EventUncheckedCreateWithoutPosterInput>
-    connectOrCreate?: EventCreateOrConnectWithoutPosterInput
-    upsert?: EventUpsertWithoutPosterInput
+  export type EventUpdateOneRequiredWithoutImageNestedInput = {
+    create?: XOR<EventCreateWithoutImageInput, EventUncheckedCreateWithoutImageInput>
+    connectOrCreate?: EventCreateOrConnectWithoutImageInput
+    upsert?: EventUpsertWithoutImageInput
     connect?: EventWhereUniqueInput
-    update?: XOR<XOR<EventUpdateToOneWithWhereWithoutPosterInput, EventUpdateWithoutPosterInput>, EventUncheckedUpdateWithoutPosterInput>
+    update?: XOR<XOR<EventUpdateToOneWithWhereWithoutImageInput, EventUpdateWithoutImageInput>, EventUncheckedUpdateWithoutImageInput>
   }
 
   export type EventCreateNestedManyWithoutVenueInput = {
@@ -7286,41 +7467,41 @@ export namespace Prisma {
     deleteMany?: EventScalarWhereInput | EventScalarWhereInput[]
   }
 
-  export type EventCreateNestedManyWithoutCategoryInput = {
-    create?: XOR<EventCreateWithoutCategoryInput, EventUncheckedCreateWithoutCategoryInput> | EventCreateWithoutCategoryInput[] | EventUncheckedCreateWithoutCategoryInput[]
-    connectOrCreate?: EventCreateOrConnectWithoutCategoryInput | EventCreateOrConnectWithoutCategoryInput[]
+  export type EventCreateNestedManyWithoutCategoriesInput = {
+    create?: XOR<EventCreateWithoutCategoriesInput, EventUncheckedCreateWithoutCategoriesInput> | EventCreateWithoutCategoriesInput[] | EventUncheckedCreateWithoutCategoriesInput[]
+    connectOrCreate?: EventCreateOrConnectWithoutCategoriesInput | EventCreateOrConnectWithoutCategoriesInput[]
     connect?: EventWhereUniqueInput | EventWhereUniqueInput[]
   }
 
-  export type EventUncheckedCreateNestedManyWithoutCategoryInput = {
-    create?: XOR<EventCreateWithoutCategoryInput, EventUncheckedCreateWithoutCategoryInput> | EventCreateWithoutCategoryInput[] | EventUncheckedCreateWithoutCategoryInput[]
-    connectOrCreate?: EventCreateOrConnectWithoutCategoryInput | EventCreateOrConnectWithoutCategoryInput[]
+  export type EventUncheckedCreateNestedManyWithoutCategoriesInput = {
+    create?: XOR<EventCreateWithoutCategoriesInput, EventUncheckedCreateWithoutCategoriesInput> | EventCreateWithoutCategoriesInput[] | EventUncheckedCreateWithoutCategoriesInput[]
+    connectOrCreate?: EventCreateOrConnectWithoutCategoriesInput | EventCreateOrConnectWithoutCategoriesInput[]
     connect?: EventWhereUniqueInput | EventWhereUniqueInput[]
   }
 
-  export type EventUpdateManyWithoutCategoryNestedInput = {
-    create?: XOR<EventCreateWithoutCategoryInput, EventUncheckedCreateWithoutCategoryInput> | EventCreateWithoutCategoryInput[] | EventUncheckedCreateWithoutCategoryInput[]
-    connectOrCreate?: EventCreateOrConnectWithoutCategoryInput | EventCreateOrConnectWithoutCategoryInput[]
-    upsert?: EventUpsertWithWhereUniqueWithoutCategoryInput | EventUpsertWithWhereUniqueWithoutCategoryInput[]
+  export type EventUpdateManyWithoutCategoriesNestedInput = {
+    create?: XOR<EventCreateWithoutCategoriesInput, EventUncheckedCreateWithoutCategoriesInput> | EventCreateWithoutCategoriesInput[] | EventUncheckedCreateWithoutCategoriesInput[]
+    connectOrCreate?: EventCreateOrConnectWithoutCategoriesInput | EventCreateOrConnectWithoutCategoriesInput[]
+    upsert?: EventUpsertWithWhereUniqueWithoutCategoriesInput | EventUpsertWithWhereUniqueWithoutCategoriesInput[]
     set?: EventWhereUniqueInput | EventWhereUniqueInput[]
     disconnect?: EventWhereUniqueInput | EventWhereUniqueInput[]
     delete?: EventWhereUniqueInput | EventWhereUniqueInput[]
     connect?: EventWhereUniqueInput | EventWhereUniqueInput[]
-    update?: EventUpdateWithWhereUniqueWithoutCategoryInput | EventUpdateWithWhereUniqueWithoutCategoryInput[]
-    updateMany?: EventUpdateManyWithWhereWithoutCategoryInput | EventUpdateManyWithWhereWithoutCategoryInput[]
+    update?: EventUpdateWithWhereUniqueWithoutCategoriesInput | EventUpdateWithWhereUniqueWithoutCategoriesInput[]
+    updateMany?: EventUpdateManyWithWhereWithoutCategoriesInput | EventUpdateManyWithWhereWithoutCategoriesInput[]
     deleteMany?: EventScalarWhereInput | EventScalarWhereInput[]
   }
 
-  export type EventUncheckedUpdateManyWithoutCategoryNestedInput = {
-    create?: XOR<EventCreateWithoutCategoryInput, EventUncheckedCreateWithoutCategoryInput> | EventCreateWithoutCategoryInput[] | EventUncheckedCreateWithoutCategoryInput[]
-    connectOrCreate?: EventCreateOrConnectWithoutCategoryInput | EventCreateOrConnectWithoutCategoryInput[]
-    upsert?: EventUpsertWithWhereUniqueWithoutCategoryInput | EventUpsertWithWhereUniqueWithoutCategoryInput[]
+  export type EventUncheckedUpdateManyWithoutCategoriesNestedInput = {
+    create?: XOR<EventCreateWithoutCategoriesInput, EventUncheckedCreateWithoutCategoriesInput> | EventCreateWithoutCategoriesInput[] | EventUncheckedCreateWithoutCategoriesInput[]
+    connectOrCreate?: EventCreateOrConnectWithoutCategoriesInput | EventCreateOrConnectWithoutCategoriesInput[]
+    upsert?: EventUpsertWithWhereUniqueWithoutCategoriesInput | EventUpsertWithWhereUniqueWithoutCategoriesInput[]
     set?: EventWhereUniqueInput | EventWhereUniqueInput[]
     disconnect?: EventWhereUniqueInput | EventWhereUniqueInput[]
     delete?: EventWhereUniqueInput | EventWhereUniqueInput[]
     connect?: EventWhereUniqueInput | EventWhereUniqueInput[]
-    update?: EventUpdateWithWhereUniqueWithoutCategoryInput | EventUpdateWithWhereUniqueWithoutCategoryInput[]
-    updateMany?: EventUpdateManyWithWhereWithoutCategoryInput | EventUpdateManyWithWhereWithoutCategoryInput[]
+    update?: EventUpdateWithWhereUniqueWithoutCategoriesInput | EventUpdateWithWhereUniqueWithoutCategoriesInput[]
+    updateMany?: EventUpdateManyWithWhereWithoutCategoriesInput | EventUpdateManyWithWhereWithoutCategoriesInput[]
     deleteMany?: EventScalarWhereInput | EventScalarWhereInput[]
   }
 
@@ -7336,6 +7517,17 @@ export namespace Prisma {
     startsWith?: string | StringFieldRefInput<$PrismaModel>
     endsWith?: string | StringFieldRefInput<$PrismaModel>
     not?: NestedStringFilter<$PrismaModel> | string
+  }
+
+  export type NestedDateTimeFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
   }
 
   export type NestedStringNullableFilter<$PrismaModel = never> = {
@@ -7355,17 +7547,6 @@ export namespace Prisma {
   export type NestedBoolFilter<$PrismaModel = never> = {
     equals?: boolean | BooleanFieldRefInput<$PrismaModel>
     not?: NestedBoolFilter<$PrismaModel> | boolean
-  }
-
-  export type NestedDateTimeFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeFilter<$PrismaModel> | Date | string
   }
 
   export type NestedStringWithAggregatesFilter<$PrismaModel = never> = {
@@ -7394,6 +7575,20 @@ export namespace Prisma {
     gt?: number | IntFieldRefInput<$PrismaModel>
     gte?: number | IntFieldRefInput<$PrismaModel>
     not?: NestedIntFilter<$PrismaModel> | number
+  }
+
+  export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedDateTimeFilter<$PrismaModel>
+    _max?: NestedDateTimeFilter<$PrismaModel>
   }
 
   export type NestedStringNullableWithAggregatesFilter<$PrismaModel = never> = {
@@ -7430,20 +7625,6 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedBoolFilter<$PrismaModel>
     _max?: NestedBoolFilter<$PrismaModel>
-  }
-
-  export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    notIn?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedDateTimeFilter<$PrismaModel>
-    _max?: NestedDateTimeFilter<$PrismaModel>
   }
 
   export type NestedDateTimeNullableFilter<$PrismaModel = never> = {
@@ -7498,211 +7679,229 @@ export namespace Prisma {
     _max?: NestedDateTimeNullableFilter<$PrismaModel>
   }
 
-  export type PosterCreateWithoutEventInput = {
-    createdAt?: Date | string
+  export type ImageCreateWithoutEventInput = {
     id?: string
-    title: string
-    url: string
-  }
-
-  export type PosterUncheckedCreateWithoutEventInput = {
     createdAt?: Date | string
-    id?: string
-    title: string
-    url: string
-  }
-
-  export type PosterCreateOrConnectWithoutEventInput = {
-    where: PosterWhereUniqueInput
-    create: XOR<PosterCreateWithoutEventInput, PosterUncheckedCreateWithoutEventInput>
-  }
-
-  export type VenueCreateWithoutEventInput = {
-    createdAt?: Date | string
+    updatedAt?: Date | string
     name: string
-    adress: string
+    url: string
   }
 
-  export type VenueUncheckedCreateWithoutEventInput = {
+  export type ImageUncheckedCreateWithoutEventInput = {
+    id?: string
     createdAt?: Date | string
+    updatedAt?: Date | string
+    name: string
+    url: string
+  }
+
+  export type ImageCreateOrConnectWithoutEventInput = {
+    where: ImageWhereUniqueInput
+    create: XOR<ImageCreateWithoutEventInput, ImageUncheckedCreateWithoutEventInput>
+  }
+
+  export type VenueCreateWithoutEventsInput = {
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    name: string
+  }
+
+  export type VenueUncheckedCreateWithoutEventsInput = {
     id?: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
     name: string
-    adress: string
   }
 
-  export type VenueCreateOrConnectWithoutEventInput = {
+  export type VenueCreateOrConnectWithoutEventsInput = {
     where: VenueWhereUniqueInput
-    create: XOR<VenueCreateWithoutEventInput, VenueUncheckedCreateWithoutEventInput>
+    create: XOR<VenueCreateWithoutEventsInput, VenueUncheckedCreateWithoutEventsInput>
   }
 
-  export type CategoryCreateWithoutEventInput = {
+  export type CategoryCreateWithoutEventsInput = {
     createdAt?: Date | string
-    id?: string
-    title: string
+    updatedAt?: Date | string
+    name: string
   }
 
-  export type CategoryUncheckedCreateWithoutEventInput = {
+  export type CategoryUncheckedCreateWithoutEventsInput = {
+    id?: number
     createdAt?: Date | string
-    id?: string
-    title: string
+    updatedAt?: Date | string
+    name: string
   }
 
-  export type CategoryCreateOrConnectWithoutEventInput = {
+  export type CategoryCreateOrConnectWithoutEventsInput = {
     where: CategoryWhereUniqueInput
-    create: XOR<CategoryCreateWithoutEventInput, CategoryUncheckedCreateWithoutEventInput>
+    create: XOR<CategoryCreateWithoutEventsInput, CategoryUncheckedCreateWithoutEventsInput>
   }
 
-  export type PosterUpsertWithoutEventInput = {
-    update: XOR<PosterUpdateWithoutEventInput, PosterUncheckedUpdateWithoutEventInput>
-    create: XOR<PosterCreateWithoutEventInput, PosterUncheckedCreateWithoutEventInput>
-    where?: PosterWhereInput
+  export type ImageUpsertWithoutEventInput = {
+    update: XOR<ImageUpdateWithoutEventInput, ImageUncheckedUpdateWithoutEventInput>
+    create: XOR<ImageCreateWithoutEventInput, ImageUncheckedCreateWithoutEventInput>
+    where?: ImageWhereInput
   }
 
-  export type PosterUpdateToOneWithWhereWithoutEventInput = {
-    where?: PosterWhereInput
-    data: XOR<PosterUpdateWithoutEventInput, PosterUncheckedUpdateWithoutEventInput>
+  export type ImageUpdateToOneWithWhereWithoutEventInput = {
+    where?: ImageWhereInput
+    data: XOR<ImageUpdateWithoutEventInput, ImageUncheckedUpdateWithoutEventInput>
   }
 
-  export type PosterUpdateWithoutEventInput = {
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  export type ImageUpdateWithoutEventInput = {
     id?: StringFieldUpdateOperationsInput | string
-    title?: StringFieldUpdateOperationsInput | string
-    url?: StringFieldUpdateOperationsInput | string
-  }
-
-  export type PosterUncheckedUpdateWithoutEventInput = {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    id?: StringFieldUpdateOperationsInput | string
-    title?: StringFieldUpdateOperationsInput | string
-    url?: StringFieldUpdateOperationsInput | string
-  }
-
-  export type VenueUpsertWithoutEventInput = {
-    update: XOR<VenueUpdateWithoutEventInput, VenueUncheckedUpdateWithoutEventInput>
-    create: XOR<VenueCreateWithoutEventInput, VenueUncheckedCreateWithoutEventInput>
-    where?: VenueWhereInput
-  }
-
-  export type VenueUpdateToOneWithWhereWithoutEventInput = {
-    where?: VenueWhereInput
-    data: XOR<VenueUpdateWithoutEventInput, VenueUncheckedUpdateWithoutEventInput>
-  }
-
-  export type VenueUpdateWithoutEventInput = {
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     name?: StringFieldUpdateOperationsInput | string
-    adress?: StringFieldUpdateOperationsInput | string
+    url?: StringFieldUpdateOperationsInput | string
   }
 
-  export type VenueUncheckedUpdateWithoutEventInput = {
+  export type ImageUncheckedUpdateWithoutEventInput = {
+    id?: StringFieldUpdateOperationsInput | string
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    name?: StringFieldUpdateOperationsInput | string
+    url?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type VenueUpsertWithoutEventsInput = {
+    update: XOR<VenueUpdateWithoutEventsInput, VenueUncheckedUpdateWithoutEventsInput>
+    create: XOR<VenueCreateWithoutEventsInput, VenueUncheckedCreateWithoutEventsInput>
+    where?: VenueWhereInput
+  }
+
+  export type VenueUpdateToOneWithWhereWithoutEventsInput = {
+    where?: VenueWhereInput
+    data: XOR<VenueUpdateWithoutEventsInput, VenueUncheckedUpdateWithoutEventsInput>
+  }
+
+  export type VenueUpdateWithoutEventsInput = {
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    name?: StringFieldUpdateOperationsInput | string
+  }
+
+  export type VenueUncheckedUpdateWithoutEventsInput = {
     id?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     name?: StringFieldUpdateOperationsInput | string
-    adress?: StringFieldUpdateOperationsInput | string
   }
 
-  export type CategoryUpsertWithWhereUniqueWithoutEventInput = {
+  export type CategoryUpsertWithWhereUniqueWithoutEventsInput = {
     where: CategoryWhereUniqueInput
-    update: XOR<CategoryUpdateWithoutEventInput, CategoryUncheckedUpdateWithoutEventInput>
-    create: XOR<CategoryCreateWithoutEventInput, CategoryUncheckedCreateWithoutEventInput>
+    update: XOR<CategoryUpdateWithoutEventsInput, CategoryUncheckedUpdateWithoutEventsInput>
+    create: XOR<CategoryCreateWithoutEventsInput, CategoryUncheckedCreateWithoutEventsInput>
   }
 
-  export type CategoryUpdateWithWhereUniqueWithoutEventInput = {
+  export type CategoryUpdateWithWhereUniqueWithoutEventsInput = {
     where: CategoryWhereUniqueInput
-    data: XOR<CategoryUpdateWithoutEventInput, CategoryUncheckedUpdateWithoutEventInput>
+    data: XOR<CategoryUpdateWithoutEventsInput, CategoryUncheckedUpdateWithoutEventsInput>
   }
 
-  export type CategoryUpdateManyWithWhereWithoutEventInput = {
+  export type CategoryUpdateManyWithWhereWithoutEventsInput = {
     where: CategoryScalarWhereInput
-    data: XOR<CategoryUpdateManyMutationInput, CategoryUncheckedUpdateManyWithoutEventInput>
+    data: XOR<CategoryUpdateManyMutationInput, CategoryUncheckedUpdateManyWithoutEventsInput>
   }
 
   export type CategoryScalarWhereInput = {
     AND?: CategoryScalarWhereInput | CategoryScalarWhereInput[]
     OR?: CategoryScalarWhereInput[]
     NOT?: CategoryScalarWhereInput | CategoryScalarWhereInput[]
+    id?: IntFilter<"Category"> | number
     createdAt?: DateTimeFilter<"Category"> | Date | string
-    id?: StringFilter<"Category"> | string
-    title?: StringFilter<"Category"> | string
+    updatedAt?: DateTimeFilter<"Category"> | Date | string
+    name?: StringFilter<"Category"> | string
   }
 
-  export type EventCreateWithoutPosterInput = {
+  export type EventCreateWithoutImageInput = {
     createdAt?: Date | string
+    updatedAt?: Date | string
     name: string
     description?: string | null
     dateStart: Date | string
     dateEnd?: Date | string | null
-    venue: VenueCreateNestedOneWithoutEventInput
-    category?: CategoryCreateNestedManyWithoutEventInput
+    imageId?: string | null
+    venue: VenueCreateNestedOneWithoutEventsInput
+    categories?: CategoryCreateNestedManyWithoutEventsInput
   }
 
-  export type EventUncheckedCreateWithoutPosterInput = {
-    createdAt?: Date | string
+  export type EventUncheckedCreateWithoutImageInput = {
     id?: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
     name: string
     description?: string | null
     dateStart: Date | string
     dateEnd?: Date | string | null
+    imageId?: string | null
     venueId: number
-    category?: CategoryUncheckedCreateNestedManyWithoutEventInput
+    categories?: CategoryUncheckedCreateNestedManyWithoutEventsInput
   }
 
-  export type EventCreateOrConnectWithoutPosterInput = {
+  export type EventCreateOrConnectWithoutImageInput = {
     where: EventWhereUniqueInput
-    create: XOR<EventCreateWithoutPosterInput, EventUncheckedCreateWithoutPosterInput>
+    create: XOR<EventCreateWithoutImageInput, EventUncheckedCreateWithoutImageInput>
   }
 
-  export type EventUpsertWithoutPosterInput = {
-    update: XOR<EventUpdateWithoutPosterInput, EventUncheckedUpdateWithoutPosterInput>
-    create: XOR<EventCreateWithoutPosterInput, EventUncheckedCreateWithoutPosterInput>
+  export type EventUpsertWithoutImageInput = {
+    update: XOR<EventUpdateWithoutImageInput, EventUncheckedUpdateWithoutImageInput>
+    create: XOR<EventCreateWithoutImageInput, EventUncheckedCreateWithoutImageInput>
     where?: EventWhereInput
   }
 
-  export type EventUpdateToOneWithWhereWithoutPosterInput = {
+  export type EventUpdateToOneWithWhereWithoutImageInput = {
     where?: EventWhereInput
-    data: XOR<EventUpdateWithoutPosterInput, EventUncheckedUpdateWithoutPosterInput>
+    data: XOR<EventUpdateWithoutImageInput, EventUncheckedUpdateWithoutImageInput>
   }
 
-  export type EventUpdateWithoutPosterInput = {
+  export type EventUpdateWithoutImageInput = {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     name?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
     dateStart?: DateTimeFieldUpdateOperationsInput | Date | string
     dateEnd?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    venue?: VenueUpdateOneRequiredWithoutEventNestedInput
-    category?: CategoryUpdateManyWithoutEventNestedInput
+    imageId?: NullableStringFieldUpdateOperationsInput | string | null
+    venue?: VenueUpdateOneRequiredWithoutEventsNestedInput
+    categories?: CategoryUpdateManyWithoutEventsNestedInput
   }
 
-  export type EventUncheckedUpdateWithoutPosterInput = {
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  export type EventUncheckedUpdateWithoutImageInput = {
     id?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     name?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
     dateStart?: DateTimeFieldUpdateOperationsInput | Date | string
     dateEnd?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    imageId?: NullableStringFieldUpdateOperationsInput | string | null
     venueId?: IntFieldUpdateOperationsInput | number
-    category?: CategoryUncheckedUpdateManyWithoutEventNestedInput
+    categories?: CategoryUncheckedUpdateManyWithoutEventsNestedInput
   }
 
   export type EventCreateWithoutVenueInput = {
     createdAt?: Date | string
+    updatedAt?: Date | string
     name: string
     description?: string | null
     dateStart: Date | string
     dateEnd?: Date | string | null
-    poster?: PosterCreateNestedOneWithoutEventInput
-    category?: CategoryCreateNestedManyWithoutEventInput
+    imageId?: string | null
+    image?: ImageCreateNestedOneWithoutEventInput
+    categories?: CategoryCreateNestedManyWithoutEventsInput
   }
 
   export type EventUncheckedCreateWithoutVenueInput = {
-    createdAt?: Date | string
     id?: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
     name: string
     description?: string | null
     dateStart: Date | string
     dateEnd?: Date | string | null
-    poster?: PosterUncheckedCreateNestedOneWithoutEventInput
-    category?: CategoryUncheckedCreateNestedManyWithoutEventInput
+    imageId?: string | null
+    image?: ImageUncheckedCreateNestedOneWithoutEventInput
+    categories?: CategoryUncheckedCreateNestedManyWithoutEventsInput
   }
 
   export type EventCreateOrConnectWithoutVenueInput = {
@@ -7735,142 +7934,164 @@ export namespace Prisma {
     AND?: EventScalarWhereInput | EventScalarWhereInput[]
     OR?: EventScalarWhereInput[]
     NOT?: EventScalarWhereInput | EventScalarWhereInput[]
-    createdAt?: DateTimeFilter<"Event"> | Date | string
     id?: IntFilter<"Event"> | number
+    createdAt?: DateTimeFilter<"Event"> | Date | string
+    updatedAt?: DateTimeFilter<"Event"> | Date | string
     name?: StringFilter<"Event"> | string
     description?: StringNullableFilter<"Event"> | string | null
     dateStart?: DateTimeFilter<"Event"> | Date | string
     dateEnd?: DateTimeNullableFilter<"Event"> | Date | string | null
+    imageId?: StringNullableFilter<"Event"> | string | null
     venueId?: IntFilter<"Event"> | number
   }
 
-  export type EventCreateWithoutCategoryInput = {
+  export type EventCreateWithoutCategoriesInput = {
     createdAt?: Date | string
+    updatedAt?: Date | string
     name: string
     description?: string | null
     dateStart: Date | string
     dateEnd?: Date | string | null
-    poster?: PosterCreateNestedOneWithoutEventInput
-    venue: VenueCreateNestedOneWithoutEventInput
+    imageId?: string | null
+    image?: ImageCreateNestedOneWithoutEventInput
+    venue: VenueCreateNestedOneWithoutEventsInput
   }
 
-  export type EventUncheckedCreateWithoutCategoryInput = {
-    createdAt?: Date | string
+  export type EventUncheckedCreateWithoutCategoriesInput = {
     id?: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
     name: string
     description?: string | null
     dateStart: Date | string
     dateEnd?: Date | string | null
+    imageId?: string | null
     venueId: number
-    poster?: PosterUncheckedCreateNestedOneWithoutEventInput
+    image?: ImageUncheckedCreateNestedOneWithoutEventInput
   }
 
-  export type EventCreateOrConnectWithoutCategoryInput = {
+  export type EventCreateOrConnectWithoutCategoriesInput = {
     where: EventWhereUniqueInput
-    create: XOR<EventCreateWithoutCategoryInput, EventUncheckedCreateWithoutCategoryInput>
+    create: XOR<EventCreateWithoutCategoriesInput, EventUncheckedCreateWithoutCategoriesInput>
   }
 
-  export type EventUpsertWithWhereUniqueWithoutCategoryInput = {
+  export type EventUpsertWithWhereUniqueWithoutCategoriesInput = {
     where: EventWhereUniqueInput
-    update: XOR<EventUpdateWithoutCategoryInput, EventUncheckedUpdateWithoutCategoryInput>
-    create: XOR<EventCreateWithoutCategoryInput, EventUncheckedCreateWithoutCategoryInput>
+    update: XOR<EventUpdateWithoutCategoriesInput, EventUncheckedUpdateWithoutCategoriesInput>
+    create: XOR<EventCreateWithoutCategoriesInput, EventUncheckedCreateWithoutCategoriesInput>
   }
 
-  export type EventUpdateWithWhereUniqueWithoutCategoryInput = {
+  export type EventUpdateWithWhereUniqueWithoutCategoriesInput = {
     where: EventWhereUniqueInput
-    data: XOR<EventUpdateWithoutCategoryInput, EventUncheckedUpdateWithoutCategoryInput>
+    data: XOR<EventUpdateWithoutCategoriesInput, EventUncheckedUpdateWithoutCategoriesInput>
   }
 
-  export type EventUpdateManyWithWhereWithoutCategoryInput = {
+  export type EventUpdateManyWithWhereWithoutCategoriesInput = {
     where: EventScalarWhereInput
-    data: XOR<EventUpdateManyMutationInput, EventUncheckedUpdateManyWithoutCategoryInput>
+    data: XOR<EventUpdateManyMutationInput, EventUncheckedUpdateManyWithoutCategoriesInput>
   }
 
-  export type CategoryUpdateWithoutEventInput = {
+  export type CategoryUpdateWithoutEventsInput = {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    id?: StringFieldUpdateOperationsInput | string
-    title?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    name?: StringFieldUpdateOperationsInput | string
   }
 
-  export type CategoryUncheckedUpdateWithoutEventInput = {
+  export type CategoryUncheckedUpdateWithoutEventsInput = {
+    id?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    id?: StringFieldUpdateOperationsInput | string
-    title?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    name?: StringFieldUpdateOperationsInput | string
   }
 
-  export type CategoryUncheckedUpdateManyWithoutEventInput = {
+  export type CategoryUncheckedUpdateManyWithoutEventsInput = {
+    id?: IntFieldUpdateOperationsInput | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
-    id?: StringFieldUpdateOperationsInput | string
-    title?: StringFieldUpdateOperationsInput | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    name?: StringFieldUpdateOperationsInput | string
   }
 
   export type EventCreateManyVenueInput = {
-    createdAt?: Date | string
     id?: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
     name: string
     description?: string | null
     dateStart: Date | string
     dateEnd?: Date | string | null
+    imageId?: string | null
   }
 
   export type EventUpdateWithoutVenueInput = {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     name?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
     dateStart?: DateTimeFieldUpdateOperationsInput | Date | string
     dateEnd?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    poster?: PosterUpdateOneWithoutEventNestedInput
-    category?: CategoryUpdateManyWithoutEventNestedInput
+    imageId?: NullableStringFieldUpdateOperationsInput | string | null
+    image?: ImageUpdateOneWithoutEventNestedInput
+    categories?: CategoryUpdateManyWithoutEventsNestedInput
   }
 
   export type EventUncheckedUpdateWithoutVenueInput = {
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     id?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     name?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
     dateStart?: DateTimeFieldUpdateOperationsInput | Date | string
     dateEnd?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    poster?: PosterUncheckedUpdateOneWithoutEventNestedInput
-    category?: CategoryUncheckedUpdateManyWithoutEventNestedInput
+    imageId?: NullableStringFieldUpdateOperationsInput | string | null
+    image?: ImageUncheckedUpdateOneWithoutEventNestedInput
+    categories?: CategoryUncheckedUpdateManyWithoutEventsNestedInput
   }
 
   export type EventUncheckedUpdateManyWithoutVenueInput = {
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     id?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     name?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
     dateStart?: DateTimeFieldUpdateOperationsInput | Date | string
     dateEnd?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    imageId?: NullableStringFieldUpdateOperationsInput | string | null
   }
 
-  export type EventUpdateWithoutCategoryInput = {
+  export type EventUpdateWithoutCategoriesInput = {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     name?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
     dateStart?: DateTimeFieldUpdateOperationsInput | Date | string
     dateEnd?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-    poster?: PosterUpdateOneWithoutEventNestedInput
-    venue?: VenueUpdateOneRequiredWithoutEventNestedInput
+    imageId?: NullableStringFieldUpdateOperationsInput | string | null
+    image?: ImageUpdateOneWithoutEventNestedInput
+    venue?: VenueUpdateOneRequiredWithoutEventsNestedInput
   }
 
-  export type EventUncheckedUpdateWithoutCategoryInput = {
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  export type EventUncheckedUpdateWithoutCategoriesInput = {
     id?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     name?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
     dateStart?: DateTimeFieldUpdateOperationsInput | Date | string
     dateEnd?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    imageId?: NullableStringFieldUpdateOperationsInput | string | null
     venueId?: IntFieldUpdateOperationsInput | number
-    poster?: PosterUncheckedUpdateOneWithoutEventNestedInput
+    image?: ImageUncheckedUpdateOneWithoutEventNestedInput
   }
 
-  export type EventUncheckedUpdateManyWithoutCategoryInput = {
-    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  export type EventUncheckedUpdateManyWithoutCategoriesInput = {
     id?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     name?: StringFieldUpdateOperationsInput | string
     description?: NullableStringFieldUpdateOperationsInput | string | null
     dateStart?: DateTimeFieldUpdateOperationsInput | Date | string
     dateEnd?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    imageId?: NullableStringFieldUpdateOperationsInput | string | null
     venueId?: IntFieldUpdateOperationsInput | number
   }
 
@@ -7900,9 +8121,9 @@ export namespace Prisma {
      */
     export type EventArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = EventDefaultArgs<ExtArgs>
     /**
-     * @deprecated Use PosterDefaultArgs instead
+     * @deprecated Use ImageDefaultArgs instead
      */
-    export type PosterArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = PosterDefaultArgs<ExtArgs>
+    export type ImageArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = ImageDefaultArgs<ExtArgs>
     /**
      * @deprecated Use VenueDefaultArgs instead
      */

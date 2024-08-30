@@ -1,12 +1,16 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import styles from '@/src/styles/app.module.css';
 import prisma from '@/prisma/db';
 import EventTeaser from '@/src/components/Events/Teaser';
-
-export const metadata: Metadata = { title: 'EventPage' };
+import CreateEventForm from '@/src/components/Events/Form';
+import styles from '@/src/styles/app.module.css';
+import { auth } from '@/src/auth';
 
 export default async function EventPage() {
+  const session = await auth();
+
+  const venues = await prisma.venue.findMany();
+  const categories = await prisma.category.findMany();
   const futureEvents = await prisma.event.findMany({
     where: {
       dateStart: {
@@ -15,9 +19,9 @@ export default async function EventPage() {
     },
     include: {
       venue: true,
-      category: {
+      categories: {
         select: {
-          title: true,
+          name: true,
         },
       },
     },
@@ -31,9 +35,9 @@ export default async function EventPage() {
     },
     include: {
       venue: true,
-      category: {
+      categories: {
         select: {
-          title: true,
+          name: true,
         },
       },
     },
@@ -50,12 +54,21 @@ export default async function EventPage() {
       </Link>
 
       <div className={styles.description}>
+        <h1>Create a new event</h1>
+        {!session && (
+          <Link href='/' style={{ color: 'red', textDecoration: 'underline' }}>
+            Login with GitHub to create events
+          </Link>
+        )}
+        <CreateEventForm venues={venues} categories={categories} isLoggedIn={!session} />
+      </div>
+      <br />
+
+      <div className={styles.description}>
         <h1>Upcoming Events</h1>
       </div>
       {futureEvents.map((event) => (
-        <div key={event.id} className={styles.description}>
-          <EventTeaser {...event} />
-        </div>
+        <EventTeaser key={event.id} {...event} />
       ))}
 
       <br />
@@ -66,10 +79,10 @@ export default async function EventPage() {
         <h1>Past Events</h1>
       </div>
       {pastEvents.map((event) => (
-        <div key={event.id} className={styles.description}>
-          <EventTeaser {...event} />
-        </div>
+        <EventTeaser key={event.id} {...event} />
       ))}
     </main>
   );
 }
+
+export const metadata: Metadata = { title: 'EventPage' };

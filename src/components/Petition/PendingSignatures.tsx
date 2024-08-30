@@ -1,9 +1,9 @@
 'use server';
 
 import prisma from '@/prisma/db';
-import PendingSignaturesButtons from './PendingSignaturesButtons';
+import PendingSignaturesControls from './PendingSignaturesControls';
 
-export default async function PendingSignatures() {
+export default async function PendingSignatures({ isLoggedIn }: { isLoggedIn: boolean }) {
   const signatures = await prisma.signature.findMany({
     orderBy: [{ approved: 'asc' }, { name: 'asc' }],
   });
@@ -11,13 +11,10 @@ export default async function PendingSignatures() {
   if (!signatures.length) return <h2>No approved signature</h2>;
   else
     return (
-      <>
-        <h2>Admin Controls</h2>
-        <ul>
-          {signatures.map((signature) => (
-            <PendingSignaturesButtons key={signature.id} {...signature} /> // client component for onClick interactions
-          ))}
-        </ul>
-      </>
+      <ul>
+        {signatures.map((signature) => (
+          <PendingSignaturesControls key={signature.id} isLoggedIn={isLoggedIn} {...signature} /> // client component for onClick interactions
+        ))}
+      </ul>
     );
 }

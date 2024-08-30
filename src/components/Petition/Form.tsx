@@ -1,16 +1,10 @@
 'use client';
 
-import styles from '@/src/styles/app.module.css';
-import { addSignature } from './ServerActions';
-import FormSubmitButton from './FormSubmitButton';
-import { useFormState } from 'react-dom';
 import { useEffect, useRef } from 'react';
-
-export type InitalFormState = { status: 'ok' | 'error' | null; message: string };
-const initalState: InitalFormState = {
-  status: null,
-  message: '',
-};
+import { useFormState } from 'react-dom';
+import { addSignature } from './ServerActions';
+import FormSubmitButton from '../FormSubmitButton';
+import styles from '@/src/styles/app.module.css';
 
 export default function Form() {
   const [formState, formAction] = useFormState(addSignature, initalState);
@@ -42,8 +36,11 @@ export default function Form() {
       {formState.status === 'error' ? (
         <p style={{ color: 'red' }}>{formState.message}</p>
       ) : (
-        <p>{formState.message}</p>
+        <p style={{ color: 'green' }}>{formState.message}</p>
       )}
     </form>
   );
 }
+
+export type PetitionFormResponse = { status: 'ok' | 'error' | null; message: string };
+const initalState: PetitionFormResponse = { status: null, message: '' };

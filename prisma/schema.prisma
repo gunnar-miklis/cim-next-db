@@ -1,69 +1,64 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
-    provider = "prisma-client-js"
-    output   = "./generated/client"
+  provider = "prisma-client-js"
+  output   = "./generated/client"
 }
 
 datasource db {
-    provider  = "postgresql"
-    url       = env("POSTGRES_PRISMA_URL") // uses connection pooling
-    directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+  provider  = "postgresql"
+  url       = env("POSTGRES_PRISMA_URL")
+  directUrl = env("POSTGRES_URL_NON_POOLING")
 }
 
-// No realtion
 model Signature {
-    id       String   @id @default(uuid())
-    name     String?
-    email    String   @unique
-    approved Boolean  @default(false)
-    date     DateTime @default(now())
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  name      String?
+  email     String   @unique
+  approved  Boolean  @default(false)
 }
 
 // relations
 model Event {
-    createdAt   DateTime   @default(now())
-    id          Int        @id @default(autoincrement())
-    name        String
-    description String?
-    dateStart   DateTime
-    dateEnd     DateTime?
-    // one-to-one realtion: needs to be optional in a one-to-one
-    poster      Poster?
-    // one-to-many relation
-    venue       Venue      @relation(fields: [venueId], references: [id])
-    venueId     Int
-    // many-tomany relation
-    category    Category[]
+  id          Int        @id @default(autoincrement())
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+  name        String
+  description String?
+  dateStart   DateTime
+  dateEnd     DateTime?
+  image       Image? // 1:1 needs to be optionl
+  imageId     String?
+  venue       Venue      @relation(fields: [venueId], references: [id])
+  venueId     Int
+  categories  Category[]
 }
 
-// one-to-one relation: one poster - one event
-model Poster {
-    createdAt DateTime @default(now())
-    id        String   @id @default(uuid())
-    title     String
-    url       String
-    event     Event    @relation(fields: [eventId], references: [id])
-    eventId   Int      @unique
+// one-to-one relation: one event has one image
+model Image {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  name      String
+  url       String
+  event     Event    @relation(fields: [eventId], references: [id])
+  eventId   Int      @unique
 }
 
-// one-to-many relation: one venue - many events
+// one-to-many relation: one venue can have many events
 model Venue {
-    createdAt DateTime @default(now())
-    id        Int      @id @default(autoincrement())
-    name      String
-    adress    String
-    event     Event[]
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  name      String
+  events    Event[]
 }
 
-// many-to-many relation: many events - many categories
+// many-to-many relation: many events can have many categories and vice versa
 model Category {
-    createdAt DateTime @default(now())
-    id        String   @id @default(uuid())
-    title     String
-    event     Event[]
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  name      String
+  events    Event[]
 }

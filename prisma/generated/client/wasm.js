@@ -121,41 +121,46 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
 
 exports.Prisma.SignatureScalarFieldEnum = {
   id: 'id',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
   name: 'name',
   email: 'email',
-  approved: 'approved',
-  date: 'date'
+  approved: 'approved'
 };
 
 exports.Prisma.EventScalarFieldEnum = {
-  createdAt: 'createdAt',
   id: 'id',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
   name: 'name',
   description: 'description',
   dateStart: 'dateStart',
   dateEnd: 'dateEnd',
+  imageId: 'imageId',
   venueId: 'venueId'
 };
 
-exports.Prisma.PosterScalarFieldEnum = {
-  createdAt: 'createdAt',
+exports.Prisma.ImageScalarFieldEnum = {
   id: 'id',
-  title: 'title',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  name: 'name',
   url: 'url',
   eventId: 'eventId'
 };
 
 exports.Prisma.VenueScalarFieldEnum = {
-  createdAt: 'createdAt',
   id: 'id',
-  name: 'name',
-  adress: 'adress'
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  name: 'name'
 };
 
 exports.Prisma.CategoryScalarFieldEnum = {
-  createdAt: 'createdAt',
   id: 'id',
-  title: 'title'
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt',
+  name: 'name'
 };
 
 exports.Prisma.SortOrder = {
@@ -177,7 +182,7 @@ exports.Prisma.NullsOrder = {
 exports.Prisma.ModelName = {
   Signature: 'Signature',
   Event: 'Event',
-  Poster: 'Poster',
+  Image: 'Image',
   Venue: 'Venue',
   Category: 'Category'
 };

@@ -6,19 +6,17 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "vercel-build": "prisma generate && prisma migrate deploy && next build",
+    "vercel-build": "pnpify prisma generate && prisma migrate deploy && next build",
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write ./src/**/*"
   },
   "dependencies": {
     "@prisma/client": "5.19.0",
-    "@vercel/postgres": "^0.9.0",
     "next": "14.2.6",
+    "next-auth": "^5.0.0-beta.20",
     "react": "^18",
     "react-dom": "^18",
-    "redaxios": "^0.5.1",
-    "vercel": "^37.2.0",
     "zod": "^3.23.8",
     "zod-form-data": "^2.0.2"
   },
@@ -33,7 +31,6 @@
     "eslint-plugin-jsx-a11y": "^6.9.0",
     "prettier": "^3.3.3",
     "prisma": "5.19.0",
-    "ts-node": "^10.9.2",
     "typescript": "^5.5.4"
   }
 }
