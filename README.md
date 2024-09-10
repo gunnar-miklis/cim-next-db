@@ -6,22 +6,22 @@ Educational project to learn how to integrate a database and authentication in N
 
 ### Database
 
-- Create a `Prisma ORM` schema and connect to the `Vercel PostgreSQL` Database.
-- Add various SQL relation: one-to-one, one-to-many, many-to-many.
-- Query the database via `Prisma ORM` and "populate" relations during querying.
-- Integrate a simple pagination mechanism to read the database.
+- Create a `Prisma ORM` **schema** and connect to the `Vercel PostgreSQL` Database.
+- Add various SQL relations: `one-to-one`, `one-to-many`, `many-to-many`.
+- **Query** the database via `Prisma ORM` and "**populate**" relations during querying.
+- Integrate a simple **pagination** mechanism to read the database.
 
 ### Next
 
 - Create client and server components.
 - Handle form submit in Next.js via: `useFormState()` + `useFormStatus()` to control the "pending-status" and "response-messages" on the client-side.
-- Use Next.js `Server Actions` to read and write data from the database via `Prisma ORM` on the server-side.
-- Validate form data against a Zod schema.
+- Use Next.js `Server Actions` for **CRUD** operations. Read and write data from the database via `Prisma ORM` on the server-side.
+- **Validate** form data against a Zod schema.
 
 ### Authentication
 
-- Authenticate a user via GitHub OAuth procedure.
-- Lock certain features based on the session/login status.
+- Authenticate a user via GitHub **OAuth procedure**.
+- **Lock** certain features based on the session/login status.
 
 ## 🛠️ Technologies and Frameworks
 
@@ -31,11 +31,17 @@ Educational project to learn how to integrate a database and authentication in N
 - Vercel PostgreSQL Database
 - Prisma ORM
 
-## 🖥️ Usage
+## ⚙️ Setup Authentication
 
-1. Start the development server: `yarn dev` or `npm run dev`.
-2. Open your browser and visit `http://localhost:3000`.
-3. Explore the features.
+1. Create a Auth secret: `npx auth secret`.
+2. Create and register a new OAuth app on GitHub: ["New OAuth App"](https://github.com/settings/developers)
+3. Add to the `.env` file:
+
+    ```javascript
+    AUTH_SECRET="auto generated in step 1"
+    AUTH_GITHUB_ID="optained in step 2"
+    AUTH_GITHUB_SECRET="optained in step 2"
+    ```
 
 &nbsp;
 
@@ -43,7 +49,7 @@ Educational project to learn how to integrate a database and authentication in N
 
 &nbsp;
 
-# 🚧 Yarn (PnP) + Prisma Client
+# 🚧 Yarn (PnP) + Prisma
 
 There seem to be issues with `yarn PnP` and the `prisma client`. Here is my workaround:
 
