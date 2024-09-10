@@ -30,7 +30,6 @@ export async function addEvent(prevState: unknown, formData: FormData) {
 
   const { success, data, error } = formValidator.safeParse(formData);
   if (!success) {
-    console.log('JSON.parse(error.message)[0] :>> ', JSON.parse(error.message)[0]);
     response.status = 'error';
     response.message = JSON.parse(error.message)[0].message || 'Wrong input';
     return response;
