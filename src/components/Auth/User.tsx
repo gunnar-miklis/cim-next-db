@@ -5,7 +5,7 @@ export default function User({ name, image }: User) {
   if (!name || !image) return <h2>User is not authenticated</h2>;
   else
     return (
-      <div>
+      <>
         <h2>Hello {name} !!</h2>
         <Image
           src={image}
@@ -16,6 +16,6 @@ export default function User({ name, image }: User) {
           placeholder='blur'
           loading='lazy'
         />
-      </div>
+      </>
     );
 }

@@ -39,8 +39,7 @@ export default async function Home() {
       </Link>
 
       <article className={styles.description}>
-        <h1>User</h1>
-        <div>{session && <User {...session.user} />}</div>
+        <div>{session ? <User {...session.user} /> : <h2>Login</h2>}</div>
         <div>{session ? <SignOut /> : <SignIn />}</div>
       </article>
     </main>
