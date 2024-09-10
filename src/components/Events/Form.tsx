@@ -33,7 +33,6 @@ export default function CreateEventForm({ venues, categories, isLoggedIn }: Prop
           minLength={2}
           maxLength={100}
           required
-          // @ts-expect-error the "disabled" attribute "disabled" apparently does not exist on InputHTMLAttributes. "disable" exist, but doesn't do the same as "disabled". looked it up but can't fix it :(
           disabled={isLoggedIn}
         />
       </div>
@@ -45,12 +44,10 @@ export default function CreateEventForm({ venues, categories, isLoggedIn }: Prop
 
       <div className={styles.inputWrapper}>
         <label htmlFor='dateStart'>Start Date*</label>
-        {/* @ts-expect-error the "disabled" attribute "disabled" apparently does not exist on InputHTMLAttributes. "disable" exist, but doesn't do the same as "disabled". looked it up but can't fix it :( */}
         <input id='dateStart' name='dateStart' type='date' required disabled={isLoggedIn} />
       </div>
       <div className={styles.inputWrapper}>
         <label htmlFor='dateEnd'>End Date (optional)</label>
-        {/* @ts-expect-error the "disabled" attribute "disabled" apparently does not exist on InputHTMLAttributes. "disable" exist, but doesn't do the same as "disabled". looked it up but can't fix it :( */}
         <input id='dateEnd' name='dateEnd' type='date' disabled={isLoggedIn} />
       </div>
 
@@ -69,7 +66,6 @@ export default function CreateEventForm({ venues, categories, isLoggedIn }: Prop
         <legend>Categories*</legend>
         {categories.map(({ id, name }) => (
           <label key={id}>
-            {/* @ts-expect-error the "disabled" attribute "disabled" apparently does not exist on InputHTMLAttributes. "disable" exist, but doesn't do the same as "disabled". looked it up but can't fix it :( */}
             <input type='checkbox' name='categoryIds' value={id} disabled={isLoggedIn} />
             {name}
           </label>
