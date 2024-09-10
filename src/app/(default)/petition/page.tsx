@@ -88,7 +88,7 @@ export default async function PetitionPage({ searchParams: { page = '' } }: Prop
         <h2>Admin Controls</h2>
         {!session && (
           <Link href='/' style={{ color: 'red', textDecoration: 'underline' }}>
-            Login with GitHub to create events
+            Login with GitHub to access admin controls
           </Link>
         )}
         <PendingSignatures isLoggedIn={!session} />
