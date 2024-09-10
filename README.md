@@ -1,6 +1,27 @@
 # Next + Database + Authentication
 
+&nbsp;
+
 Educational project to learn how to integrate a database and authentication in Next.
+
+&nbsp;
+
+<table>
+  <tr>
+    <td width="21%">
+      <img src="https://res.cloudinary.com/dyrcsywk9/image/upload/v1725998093/cim-next-db-home-phone.webp"       alt="Home Phone" />
+    </td>
+    <td width="29%">
+      <img src="https://res.cloudinary.com/dyrcsywk9/image/upload/v1725998093/cim-next-db-petition-tablet.webp"    alt="Petition Tablet" />
+    </td>
+    <td width="40%">
+      <img src="https://res.cloudinary.com/dyrcsywk9/image/upload/v1725998093/cim-next-db-events-form-laptop.webp" alt="Events Form Laptop" />
+      <img src="https://res.cloudinary.com/dyrcsywk9/image/upload/v1725998092/cim-next-db-events-details-laptop.webp" alt="Events Details Laptop" />
+    </td>
+  </tr>
+</table>
+
+&nbsp;
 
 ## 🚀 Features
 
